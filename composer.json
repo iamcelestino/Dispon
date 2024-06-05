@@ -1,0 +1,17 @@
+{
+    "name": "dell/dispon",
+    "version": "1.0.0",
+    "description": "A Web application that helps you to check product  price and availibity from different providers",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Celestino Trosso"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/App/"
+        }
+    }
+}

@@ -1,0 +1,6 @@
+# Specify PHP file extensions
+*.php linguist-language=PHP
+
+# If you have other files that should be counted as PHP
+*.phtml linguist-language=PHP
+*.php5 linguist-language=PHP
