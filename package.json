@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/iamcelestino/Dispon/issues"
   },
-  "homepage": "https://github.com/iamcelestino/Dispon#readme"
+  "homepage": "https://github.com/iamcelestino/Dispon#readme",
+  "devDependencies": {
+    "gulp": "^5.0.0",
+    "gulp-sass": "^5.1.0",
+    "sass": "^1.77.4"
+  }
 }
