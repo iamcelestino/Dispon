@@ -1,25 +1,75 @@
 @use '../variables.scss' as variable;
+@use './mixins' as mixin;
 
 
 header {
-    .logo {
 
-        .boxes {
-            display: flex;
-            gap: 20px;
+    .navigation, 
+    .navigation_itens {
+        display: flex;
+        align-items: center;
+    }
 
-            .box {
-                background-color: variable.$secondary-green;
-                padding: 20px;
-            }
-        }
-        
-  
+    .nav__links {
+        display: none;
+    }
 
-        p {
-            color: variable.$secondary-green;
-            font-size: 23px;
-            font-weight: 800;
+    .navigation, .navigation_itens {
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .navigation_itens {
+        gap: 20px;
+
+        li + li {
+            margin-left: 1rem;
         }
     }
+
+    .logo {
+
+        .is{
+           color:  variable.$secondary-green;
+        }
+
+        .po {
+            color: variable.$secondary-yellow;
+        }
+    }
+
+    .nav__buttons {
+
+        display: none;
+
+        li {
+            display: inline-block;
+            border-radius: 50px;
+            padding: 0.7rem 1.5rem;
+        }
+
+        & li:first-child {
+            border: 4px solid  variable.$secondary-green;  
+        }
+
+        & li:last-child {
+            background-color: variable.$secondary-green;
+            padding: 0.9rem 1.5rem;
+
+            a {
+                color: variable.$secondary-yellow;
+                font-weight: 800;
+            }
+        }
+    }
+
+    @include mixin.mediun {
+        .nav__links {
+            display: flex;
+        }
+        .nav__buttons {
+            display: block;
+        }
+    }
+
 }

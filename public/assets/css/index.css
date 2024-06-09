@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap");
 *, ::before, ::after {
   padding: 0;
   margin: 0;
@@ -5,7 +6,13 @@
 }
 
 body {
+  font-family: "Jost", sans-serif;
   background-color: #EFEFEF;
+  font-size: 18px;
+}
+
+img {
+  max-width: 100%;
 }
 
 li {
@@ -16,16 +23,54 @@ a {
   text-decoration: none;
 }
 
-header .logo .boxes {
+header .navigation,
+header .navigation_itens {
   display: flex;
+  align-items: center;
+}
+header .nav__links {
+  display: none;
+}
+header .navigation, header .navigation_itens {
+  justify-content: space-between;
+  align-items: center;
+}
+header .navigation_itens {
   gap: 20px;
 }
-header .logo .boxes .box {
-  background-color: #016F54;
-  padding: 20px;
+header .navigation_itens li + li {
+  margin-left: 1rem;
 }
-header .logo p {
+header .logo .is {
   color: #016F54;
-  font-size: 23px;
+}
+header .logo .po {
+  color: #EFD257;
+}
+header .nav__buttons {
+  display: none;
+}
+header .nav__buttons li {
+  display: inline-block;
+  border-radius: 50px;
+  padding: 0.7rem 1.5rem;
+}
+header .nav__buttons li:first-child {
+  border: 4px solid #016F54;
+}
+header .nav__buttons li:last-child {
+  background-color: #016F54;
+  padding: 0.9rem 1.5rem;
+}
+header .nav__buttons li:last-child a {
+  color: #EFD257;
   font-weight: 800;
+}
+@media (min-width: 768px) {
+  header .nav__links {
+    display: flex;
+  }
+  header .nav__buttons {
+    display: block;
+  }
 }
