@@ -1,0 +1,25 @@
+@use '../variables.scss' as variable;
+
+
+header {
+    .logo {
+
+        .boxes {
+            display: flex;
+            gap: 20px;
+
+            .box {
+                background-color: variable.$secondary-green;
+                padding: 20px;
+            }
+        }
+        
+  
+
+        p {
+            color: variable.$secondary-green;
+            font-size: 23px;
+            font-weight: 800;
+        }
+    }
+}
