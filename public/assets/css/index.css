@@ -78,7 +78,7 @@ header .nav__buttons li:last-child {
   padding: 0.9rem 1.5rem;
 }
 header .nav__buttons li:last-child a {
-  color: #EFD257;
+  color: white;
 }
 header .burgerMenu {
   display: flex;
@@ -112,6 +112,10 @@ header .burgerMenu div:nth-child(3) {
 
 #banner .container {
   padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+#banner .description h1 {
+  margin-top: 1rem;
 }
 #banner .description p {
   margin: 1rem 0;
@@ -124,7 +128,7 @@ header .burgerMenu div:nth-child(3) {
 }
 #banner .description button {
   background-color: #016F54;
-  color: #EFD257;
+  color: white;
 }
 @media (min-width: 640px) {
   #banner .banner__description {
@@ -135,4 +139,42 @@ header .burgerMenu div:nth-child(3) {
   #banner .banner__description .ilustration, #banner .banner__description .description {
     max-width: 50%;
   }
+  #banner .description h1 {
+    margin-top: 0;
+  }
+}
+
+#products {
+  background-color: #E5E5E5;
+}
+#products .container {
+  padding-top: 5rem;
+}
+#products .description {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+#products .product__box > div {
+  background-color: #EFEFEF;
+  padding: 2rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+@media (min-width: 640px) {
+  #products .product__box {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-bottom: 0;
+  }
+}
+
+#supplier .container {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+#clients .container {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
 }

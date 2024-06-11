@@ -5,11 +5,16 @@
 #banner {
 
     .container {
-        padding-top: 5rem
+        padding-top: 5rem;
+        padding-bottom: 5rem;
     }
 
   
     .description {
+        h1 {
+            margin-top: 1rem;
+        }
+
         p {
             margin: 1rem 0;
         }
@@ -23,7 +28,7 @@
 
         button {
             background-color: variable.$secondary-green;
-            color: variable.$secondary-yellow;
+            color: white;
         }
     }
 
@@ -37,6 +42,63 @@
                 max-width: 50%;
             }
         }
+
+        .description {
+            h1 {
+                margin-top: 0;
+            }
+        }
+    }
+}
+
+
+#products {
+    background-color: variable.$primary-dark;
+    
+
+    .container {
+        padding-top: 5rem;
+    }
+
+    .description {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+        
+    .product__box {
+
+            & > div {
+                background-color: variable.$primary;
+                padding: 2rem;
+                border-radius: 8px;
+                margin-bottom: 1rem;
+            }
+    }
+
+    @include mixin.sm {
+        .product__box {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-bottom: 0;
+        }
+    }
+    
+}
+
+#supplier {
+
+    .container {
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+    }
+}
+
+#clients {
+
+    .container {
+        padding-top: 5rem;
+        padding-bottom: 5rem;
     }
 }
 

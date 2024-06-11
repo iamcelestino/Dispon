@@ -54,7 +54,142 @@
                 </div>
             </div>
         </section>
+
+        <section id="companies">
+            <div class="container">
+                <div>
+                </div>
+            </div>
+        </section>
+
+        <section id="products">
+            <div class="container">
+                <div class="description">
+                    <h1>The best Products for you here</h1>
+                    <p>Explore products from different suppliers and purchase them as soon as possible, what are you waiting for?</p>
+                </div>
+                <div class="product__box__container">
+                    <div class="product__box">
+                        <div class="product">
+                            <div class="">
+                                <div class="">
+                                    <h5 class="product__name">Rice</h5>
+                                    <p class="supllier">Carrinho industria</p>
+                                </div>
+                                <div class="">
+                                <p class="location">Benguela</p>
+                                    <p class="price">3000kz</p>
+                                    <p class="quantity">3</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product">
+                            <div class="">
+                                <div class="">
+                                    <h5 class="product__name">Rice</h5>
+                                    <p class="supllier">Carrinho industria</p>
+                                </div>
+                                <div class="">
+                                    <p class="location">Benguela</p>
+                                    <p class="price">3000kz</p>
+                                    <p class="quantity">3</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product__box">
+                        <div class="product">
+                            <div class="">
+                                <div class="">
+                                    <h5 class="product__name">Rice</h5>
+                                    <p class="supllier">Carrinho industria</p>
+                                </div>
+                                <div class="">
+                                    <p class="location">Benguela</p>
+                                    <p class="price">3000kz</p>
+                                    <p class="quantity">3</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product">
+                            <div class="">
+                                <div class="">
+                                    <h5 class="product__name">Rice</h5>
+                                    <p class="supllier">Carrinho industria</p>
+                                </div>
+                                <div class="">
+                                    <p class="location">Benguela</p>
+                                    <p class="price">3000kz</p>
+                                    <p class="quantity">3</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="supplier">
+            <div class="container">
+                <div>
+                    <div class="description">
+                        <div>
+                            <h2>Suppliers</h2>
+                            <h1>Looking to post a product?</h1>
+                        </div>
+                        <div class="">
+                            <div>
+                                <ion-icon name="checkmark-done-circle"></ion-icon>
+                                <p>Post Products </p>
+                            </div>
+                            <div>
+                                <ion-icon name="checkmark-done-circle"></ion-icon>
+                                <p>Get Your product exposed to clients around Benguela</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="">
+                    <img src="<?=ASSETS_URL?>images/undraw_interview_re_e5jn.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="clients">
+            <div class="container">
+                <div>
+                    <div class="description">
+                        <div>
+                            <h1>Find products besed on <span>your interests</span></h1>
+                        </div>
+                        <div class="">
+                            <div>
+                                <ion-icon name="checkmark-done-circle"></ion-icon>
+                                <p>every kind of products</p>
+                            </div>
+                            <div>
+                                <ion-icon name="checkmark-done-circle"></ion-icon>
+                                <p>Get products from supplies in Benguela </p>
+                            </div>
+                            <div>
+                                <ion-icon name="checkmark-done-circle"></ion-icon>
+                                <p>Get in touch with them </p>
+                            </div>
+                        </div>
+                        <a href="">Post product</a>
+                    </div>
+                </div>
+                <div class="">
+                        <img src="<?=ASSETS_URL?>images/customer-service-68.svg" alt="">
+                    </div>
+            </div>
+        </section>
     </main>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
 </body>
 </html>
