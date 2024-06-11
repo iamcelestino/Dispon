@@ -1,0 +1,42 @@
+@use '../variables.scss' as variable;
+@use './mixins' as mixin;
+
+
+#banner {
+
+    .container {
+        padding-top: 5rem
+    }
+
+  
+    .description {
+        p {
+            margin: 1rem 0;
+        }
+
+        input, button{
+            width: 100%;
+            padding: 0.9rem 0.6rem;
+            border: none;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: variable.$secondary-green;
+            color: variable.$secondary-yellow;
+        }
+    }
+
+    @include mixin.sm {
+        .banner__description {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+
+            .ilustration, .description {
+                max-width: 50%;
+            }
+        }
+    }
+}
+

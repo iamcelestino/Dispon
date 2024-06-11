@@ -3,6 +3,7 @@
 
 
 header {
+    padding-top: 1.5rem;
 
     .navigation, 
     .navigation_itens {
@@ -46,10 +47,18 @@ header {
             display: inline-block;
             border-radius: 50px;
             padding: 0.7rem 1.5rem;
+
+            a {
+                font-weight: 900;
+            }
         }
 
         & li:first-child {
             border: 4px solid  variable.$secondary-green;  
+
+            a {
+               color:  variable.$secondary-green;
+            }
         }
 
         & li:last-child {
@@ -58,10 +67,33 @@ header {
 
             a {
                 color: variable.$secondary-yellow;
-                font-weight: 800;
             }
         }
     }
+
+    .burgerMenu {
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        
+        div {
+            background-color: variable.$secondary-green;
+            padding: 0.2rem 0;
+            margin: 0.1rem 0;
+            width: 40px;
+            border-radius: 9px;
+        }
+
+        & div:nth-child(2) {
+            width: 35px;
+        }
+
+        & div:nth-child(3) {
+            width: 20px;
+        }
+    }
+
+
 
     @include mixin.mediun {
         .nav__links {
@@ -69,6 +101,10 @@ header {
         }
         .nav__buttons {
             display: block;
+        }
+
+        .burgerMenu {
+            display: none;
         }
     }
 

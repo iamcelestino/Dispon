@@ -11,6 +11,12 @@ body {
   font-size: 18px;
 }
 
+.container {
+  max-width: 1200px;
+  padding: 0 1.5rem;
+  margin: auto;
+}
+
 img {
   max-width: 100%;
 }
@@ -23,6 +29,9 @@ a {
   text-decoration: none;
 }
 
+header {
+  padding-top: 1.5rem;
+}
 header .navigation,
 header .navigation_itens {
   display: flex;
@@ -55,8 +64,14 @@ header .nav__buttons li {
   border-radius: 50px;
   padding: 0.7rem 1.5rem;
 }
+header .nav__buttons li a {
+  font-weight: 900;
+}
 header .nav__buttons li:first-child {
   border: 4px solid #016F54;
+}
+header .nav__buttons li:first-child a {
+  color: #016F54;
 }
 header .nav__buttons li:last-child {
   background-color: #016F54;
@@ -64,7 +79,24 @@ header .nav__buttons li:last-child {
 }
 header .nav__buttons li:last-child a {
   color: #EFD257;
-  font-weight: 800;
+}
+header .burgerMenu {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+header .burgerMenu div {
+  background-color: #016F54;
+  padding: 0.2rem 0;
+  margin: 0.1rem 0;
+  width: 40px;
+  border-radius: 9px;
+}
+header .burgerMenu div:nth-child(2) {
+  width: 35px;
+}
+header .burgerMenu div:nth-child(3) {
+  width: 20px;
 }
 @media (min-width: 768px) {
   header .nav__links {
@@ -72,5 +104,35 @@ header .nav__buttons li:last-child a {
   }
   header .nav__buttons {
     display: block;
+  }
+  header .burgerMenu {
+    display: none;
+  }
+}
+
+#banner .container {
+  padding-top: 5rem;
+}
+#banner .description p {
+  margin: 1rem 0;
+}
+#banner .description input, #banner .description button {
+  width: 100%;
+  padding: 0.9rem 0.6rem;
+  border: none;
+  border-radius: 5px;
+}
+#banner .description button {
+  background-color: #016F54;
+  color: #EFD257;
+}
+@media (min-width: 640px) {
+  #banner .banner__description {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  #banner .banner__description .ilustration, #banner .banner__description .description {
+    max-width: 50%;
   }
 }

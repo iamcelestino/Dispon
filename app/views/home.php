@@ -26,22 +26,28 @@
                     <li><a href="">Login</a></li>
                     <li><a href="">Post a Product</a></li>
                 </div>
+                <div class="burgerMenu">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
             </div>
         </div>
     </header>
     <main>
         <section id="banner" >
             <div class="container">
-                <div>
-                    <div class="">
-                        <img src="<?=ASSETS_URL?>images/map-65.svg" alt="">
+                <div class="banner__description">
+                    <div class="ilustration">
+                        <img src="<?=ASSETS_URL?>images/undraw_map_dark_re_36sy.svg" alt="">
                     </div>
-                    <div class="">
+                    <div class="description">
                         <h1>Find The <span>Perfect </span>Product for you</h1>
                         <p>Find you products in hours not weeks, from you favorities suppliers, search for free</p>
                         <form action="">
-                            <div>
-                                <input type="search" placeholder="Product name"><button type="submit">Search</button>
+                            <div class="">
+                                <input type="search" placeholder="Product name">
+                                <button type="submit">Search</button>
                             </div>
                         </form>
                     </div>
