@@ -86,19 +86,49 @@
     
 }
 
+
+
 #supplier {
 
     .container {
         padding-top: 5rem;
         padding-bottom: 5rem;
     }
+
+    ion-icon {
+        color: variable.$secondary-yellow;
+        font-size: 30px;
+    }
+
+    @include mixin.sm {
+        .container {
+    
+            & > div {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+                justify-content: space-between;
+            }
+        }
+
+        .ilustration, 
+        .description {
+            max-width: 50%;
+        }
+    }
+    
+
 }
 
 #clients {
+    
 
-    .container {
-        padding-top: 5rem;
-        padding-bottom: 5rem;
+
+    a {
+        display: inline-block;
+        background-color: variable.$primary;
+        padding: 0.9rem 1rem;
     }
+
 }
 

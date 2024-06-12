@@ -13,6 +13,7 @@
             <div class="navigation">
                 <div class="navigation_itens">
                     <div class="logo">
+                        <ion-icon name="pie-chart"></ion-icon>
                         <h1><a href="">d<span class="is">is</span><span class="po">po</span>n</a></h1>
                     </div>
                    <nav class="">
@@ -133,60 +134,76 @@
 
         <section id="supplier">
             <div class="container">
-                <div>
+                <div class="">
                     <div class="description">
-                        <div>
-                            <h2>Suppliers</h2>
+                        <div class="">
+                            <h4>Suppliers</h4>
                             <h1>Looking to post a product?</h1>
                         </div>
                         <div class="">
-                            <div>
+                            <div class="">
                                 <ion-icon name="checkmark-done-circle"></ion-icon>
                                 <p>Post Products </p>
                             </div>
-                            <div>
+                            <div class="">
                                 <ion-icon name="checkmark-done-circle"></ion-icon>
                                 <p>Get Your product exposed to clients around Benguela</p>
                             </div>
                         </div>
                     </div>
-                    <div class="">
-                    <img src="<?=ASSETS_URL?>images/undraw_interview_re_e5jn.svg" alt="">
+                    <div class="ilustration">
+                        <img src="<?=ASSETS_URL?>images/undraw_interview_re_e5jn.svg" alt="">
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="clients">
+        <section id="clients">
             <div class="container">
-                <div>
+                <div class="">
                     <div class="description">
                         <div>
                             <h1>Find products besed on <span>your interests</span></h1>
                         </div>
                         <div class="">
-                            <div>
+                            <div class="">
                                 <ion-icon name="checkmark-done-circle"></ion-icon>
                                 <p>every kind of products</p>
                             </div>
-                            <div>
+                            <div class="">
                                 <ion-icon name="checkmark-done-circle"></ion-icon>
                                 <p>Get products from supplies in Benguela </p>
                             </div>
-                            <div>
+                            <div class="">
                                 <ion-icon name="checkmark-done-circle"></ion-icon>
                                 <p>Get in touch with them </p>
                             </div>
                         </div>
                         <a href="">Post product</a>
                     </div>
-                </div>
-                <div class="">
+                    <div class="ilustration">
                         <img src="<?=ASSETS_URL?>images/customer-service-68.svg" alt="">
                     </div>
+                </div>
             </div>
         </section>
     </main>
+    <footer>
+        <div class="container">
+            <div class="">
+                <div class="logo">
+                    <ion-icon name="pie-chart"></ion-icon>
+                    <h1><a href="">d<span class="is">is</span><span class="po">po</span>n</a></h1>
+                </div>
+                <div>
+                <ul class="nav__links">
+                    <li><a href="<?= BASE_URL ?>about">About</a></li>
+                    <li><a href="<?=  BASE_URL ?>contact">Contact</a></li>
+                </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

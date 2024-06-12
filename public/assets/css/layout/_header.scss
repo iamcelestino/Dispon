@@ -29,6 +29,12 @@ header {
     }
 
     .logo {
+        display: flex;
+        align-items: center;
+
+        ion-icon {
+            font-size: 35px;
+        }
 
         .is{
            color:  variable.$secondary-green;

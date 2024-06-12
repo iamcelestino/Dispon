@@ -50,6 +50,13 @@ header .navigation_itens {
 header .navigation_itens li + li {
   margin-left: 1rem;
 }
+header .logo {
+  display: flex;
+  align-items: center;
+}
+header .logo ion-icon {
+  font-size: 35px;
+}
 header .logo .is {
   color: #016F54;
 }
@@ -173,8 +180,25 @@ header .burgerMenu div:nth-child(3) {
   padding-top: 5rem;
   padding-bottom: 5rem;
 }
+#supplier ion-icon {
+  color: #EFD257;
+  font-size: 30px;
+}
+@media (min-width: 640px) {
+  #supplier .container > div {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: space-between;
+  }
+  #supplier .ilustration,
+  #supplier .description {
+    max-width: 50%;
+  }
+}
 
-#clients .container {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+#clients a {
+  display: inline-block;
+  background-color: #EFEFEF;
+  padding: 0.9rem 1rem;
 }
