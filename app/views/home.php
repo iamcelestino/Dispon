@@ -1,41 +1,5 @@
-<?php require 'C:\xampp\htdocs\Dispon\core\config.php' ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="<?=ASSETS_URL?>css/index.css">
-</head>
-<body class="">
-    <header class="">
-        <div class="container">
-            <div class="navigation">
-                <div class="navigation_itens">
-                    <div class="logo">
-                        <ion-icon name="pie-chart"></ion-icon>
-                        <h1><a href="">d<span class="is">is</span><span class="po">po</span>n</a></h1>
-                    </div>
-                   <nav class="">
-                        <ul class="nav__links">
-                            <li><a href="<?= BASE_URL ?>about">About</a></li>
-                            <li><a href="<?=  BASE_URL ?>contact">Contact</a></li>
-                        </ul>
-                   </nav>
-                </div>
-                <div class="nav__buttons">
-                    <li><a href="">Login</a></li>
-                    <li><a href="">Post a Product</a></li>
-                </div>
-                <div class="burgerMenu">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </div>
-            </div>
-        </div>
-    </header>
-    <main>
+
+<main>
         <section id="banner" >
             <div class="container">
                 <div class="banner__description">
@@ -140,15 +104,16 @@
                             <h4>Suppliers</h4>
                             <h1>Looking to post a product?</h1>
                         </div>
-                        <div class="">
+                        <div class="description__item">
                             <div class="">
                                 <ion-icon name="checkmark-done-circle"></ion-icon>
                                 <p>Post Products </p>
                             </div>
                             <div class="">
                                 <ion-icon name="checkmark-done-circle"></ion-icon>
-                                <p>Get Your product exposed to clients around Benguela</p>
+                                <p> expose products to clients around Benguela</p>
                             </div>
+                            <a href="">Post a product for free</a>
                         </div>
                     </div>
                     <div class="ilustration">
@@ -161,11 +126,14 @@
         <section id="clients">
             <div class="container">
                 <div class="">
+                    <div class="ilustration">
+                        <img src="<?=ASSETS_URL?>images/undraw_web_search_re_efla (1).svg" alt="">
+                    </div>
                     <div class="description">
-                        <div>
+                        <div class="">
                             <h1>Find products besed on <span>your interests</span></h1>
                         </div>
-                        <div class="">
+                        <div class="description__item">
                             <div class="">
                                 <ion-icon name="checkmark-done-circle"></ion-icon>
                                 <p>every kind of products</p>
@@ -179,34 +147,9 @@
                                 <p>Get in touch with them </p>
                             </div>
                         </div>
-                        <a href="">Post product</a>
-                    </div>
-                    <div class="ilustration">
-                        <img src="<?=ASSETS_URL?>images/customer-service-68.svg" alt="">
+                        <a href="">Get Started</a>
                     </div>
                 </div>
             </div>
         </section>
     </main>
-    <footer>
-        <div class="container">
-            <div class="">
-                <div class="logo">
-                    <ion-icon name="pie-chart"></ion-icon>
-                    <h1><a href="">d<span class="is">is</span><span class="po">po</span>n</a></h1>
-                </div>
-                <div>
-                <ul class="nav__links">
-                    <li><a href="<?= BASE_URL ?>about">About</a></li>
-                    <li><a href="<?=  BASE_URL ?>contact">Contact</a></li>
-                </ul>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-
-</body>
-</html>

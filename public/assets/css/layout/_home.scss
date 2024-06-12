@@ -95,9 +95,28 @@
         padding-bottom: 5rem;
     }
 
+    a {
+        display: inline-block;
+        background-color: variable.$secondary-green;
+        padding: 0.9rem 1.5rem;
+        color: white;
+        border-radius: 50px;
+
+    }
+
+
     ion-icon {
         color: variable.$secondary-yellow;
         font-size: 30px;
+    }
+
+    .description__item {
+            
+        div {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
     }
 
     @include mixin.sm {
@@ -115,19 +134,59 @@
         .description {
             max-width: 50%;
         }
+
+        
+      
     }
     
 
 }
 
 #clients {
-    
 
+    .description__item {
+            
+        div {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+    }
 
+    span {
+        color: variable.$secondary-green;
+    }
+
+  
     a {
         display: inline-block;
-        background-color: variable.$primary;
-        padding: 0.9rem 1rem;
+        background-color: variable.$secondary-green;
+        padding: 0.9rem 1.5rem;
+        color: white;
+        border-radius: 50px;
+
+    }
+
+    ion-icon {
+        color: variable.$secondary-yellow;
+        font-size: 30px;
+    }
+
+    @include mixin.sm {
+        .container {
+    
+            & > div {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+                justify-content: space-between;
+            }
+        } 
+        
+        .ilustration, 
+        .description {
+            max-width: 50%;
+        }
     }
 
 }

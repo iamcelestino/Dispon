@@ -180,9 +180,21 @@ header .burgerMenu div:nth-child(3) {
   padding-top: 5rem;
   padding-bottom: 5rem;
 }
+#supplier a {
+  display: inline-block;
+  background-color: #016F54;
+  padding: 0.9rem 1.5rem;
+  color: white;
+  border-radius: 50px;
+}
 #supplier ion-icon {
   color: #EFD257;
   font-size: 30px;
+}
+#supplier .description__item div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
 }
 @media (min-width: 640px) {
   #supplier .container > div {
@@ -197,8 +209,34 @@ header .burgerMenu div:nth-child(3) {
   }
 }
 
+#clients .description__item div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+#clients span {
+  color: #016F54;
+}
 #clients a {
   display: inline-block;
-  background-color: #EFEFEF;
-  padding: 0.9rem 1rem;
+  background-color: #016F54;
+  padding: 0.9rem 1.5rem;
+  color: white;
+  border-radius: 50px;
+}
+#clients ion-icon {
+  color: #EFD257;
+  font-size: 30px;
+}
+@media (min-width: 640px) {
+  #clients .container > div {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: space-between;
+  }
+  #clients .ilustration,
+  #clients .description {
+    max-width: 50%;
+  }
 }
