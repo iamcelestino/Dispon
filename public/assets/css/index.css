@@ -58,7 +58,7 @@ header .logo ion-icon {
   font-size: 35px;
 }
 header .logo .is {
-  color: #016F54;
+  color: #016f54;
 }
 header .logo .po {
   color: #EFD257;
@@ -75,13 +75,13 @@ header .nav__buttons li a {
   font-weight: 900;
 }
 header .nav__buttons li:first-child {
-  border: 4px solid #016F54;
+  border: 4px solid #016f54;
 }
 header .nav__buttons li:first-child a {
-  color: #016F54;
+  color: #016f54;
 }
 header .nav__buttons li:last-child {
-  background-color: #016F54;
+  background-color: #016f54;
   padding: 0.9rem 1.5rem;
 }
 header .nav__buttons li:last-child a {
@@ -93,7 +93,7 @@ header .burgerMenu {
   align-items: end;
 }
 header .burgerMenu div {
-  background-color: #016F54;
+  background-color: #016f54;
   padding: 0.2rem 0;
   margin: 0.1rem 0;
   width: 40px;
@@ -134,7 +134,7 @@ header .burgerMenu div:nth-child(3) {
   border-radius: 5px;
 }
 #banner .description button {
-  background-color: #016F54;
+  background-color: #016f54;
   color: white;
 }
 @media (min-width: 640px) {
@@ -166,6 +166,7 @@ header .burgerMenu div:nth-child(3) {
   padding: 2rem;
   border-radius: 8px;
   margin-bottom: 1rem;
+  border: 3px solid #016f54;
 }
 @media (min-width: 640px) {
   #products .product__box {
@@ -182,10 +183,11 @@ header .burgerMenu div:nth-child(3) {
 }
 #supplier a {
   display: inline-block;
-  background-color: #016F54;
+  background-color: #016f54;
   padding: 0.9rem 1.5rem;
   color: white;
   border-radius: 50px;
+  font-weight: 900;
 }
 #supplier ion-icon {
   color: #EFD257;
@@ -215,11 +217,12 @@ header .burgerMenu div:nth-child(3) {
   margin-bottom: 1rem;
 }
 #clients span {
-  color: #016F54;
+  color: #016f54;
 }
 #clients a {
+  font-weight: 900;
   display: inline-block;
-  background-color: #016F54;
+  background-color: #016f54;
   padding: 0.9rem 1.5rem;
   color: white;
   border-radius: 50px;
@@ -239,4 +242,34 @@ header .burgerMenu div:nth-child(3) {
   #clients .description {
     max-width: 50%;
   }
+}
+
+footer {
+  background-color: #E5E5E5;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+footer .logo {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+footer .logo ion-icon {
+  font-size: 35px;
+}
+footer .logo .is {
+  color: #016f54;
+}
+footer .logo .po {
+  color: #EFD257;
+}
+footer .footer__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+footer .nav__links {
+  display: flex;
+  gap: 10px;
 }

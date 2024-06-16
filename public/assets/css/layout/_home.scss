@@ -72,6 +72,7 @@
                 padding: 2rem;
                 border-radius: 8px;
                 margin-bottom: 1rem;
+                border: 3px solid variable.$secondary-green;
             }
     }
 
@@ -86,8 +87,6 @@
     
 }
 
-
-
 #supplier {
 
     .container {
@@ -101,6 +100,7 @@
         padding: 0.9rem 1.5rem;
         color: white;
         border-radius: 50px;
+        font-weight: 900;
 
     }
 
@@ -135,11 +135,8 @@
             max-width: 50%;
         }
 
-        
-      
     }
     
-
 }
 
 #clients {
@@ -159,6 +156,7 @@
 
   
     a {
+        font-weight: 900;
         display: inline-block;
         background-color: variable.$secondary-green;
         padding: 0.9rem 1.5rem;

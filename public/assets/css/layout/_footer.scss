@@ -1,0 +1,39 @@
+@use '../variables.scss' as variable;
+@use './mixins' as mixin;
+
+footer {
+    background-color: variable.$primary-dark;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+
+    .logo {
+        display: flex;
+        align-items: center;
+        text-align: center;
+
+        ion-icon {
+            font-size: 35px;
+        }
+
+        .is{
+           color:  variable.$secondary-green;
+        }
+
+        .po {
+            color: variable.$secondary-yellow;
+        }
+    }
+
+    .footer__item {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nav__links {
+        display: flex;
+        gap: 10px;
+    }
+}
+

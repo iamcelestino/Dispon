@@ -1,4 +1,5 @@
-
+<?php $this->view('includes/head') ?>
+<?php $this->view('includes/nav') ?>
 <main>
         <section id="banner" >
             <div class="container">
@@ -153,3 +154,4 @@
             </div>
         </section>
     </main>
+<?php $this->view('includes/footer') ?>

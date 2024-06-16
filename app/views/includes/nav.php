@@ -4,7 +4,7 @@
                 <div class="navigation_itens">
                     <div class="logo">
                         <ion-icon name="pie-chart"></ion-icon>
-                        <h1><a href="">d<span class="is">is</span><span class="po">po</span>n</a></h1>
+                        <h1><a href="<?= BASE_URL ?>">d<span class="is">is</span><span class="po">po</span>n</a></h1>
                     </div>
                    <nav class="">
                         <ul class="nav__links">

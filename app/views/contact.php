@@ -1,11 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>THIS GON BE LIT</h1>
-</body>
-</html>
+<?php $this->view('includes/head') ?>
+<?php $this->view('includes/nav') ?>
+
+<main>
+    <section>
+        <div class="container">
+            <h1>This is the Contact page</h1>
+        </div>
+    </section>
+</main>
+
+<?php $this->view('includes/footer') ?>
