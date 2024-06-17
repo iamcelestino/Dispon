@@ -136,6 +136,7 @@ header .burgerMenu div:nth-child(3) {
 #banner .description button {
   background-color: #016f54;
   color: white;
+  margin-top: 0.5rem;
 }
 @media (min-width: 640px) {
   #banner .banner__description {
@@ -198,6 +199,9 @@ header .burgerMenu div:nth-child(3) {
   align-items: center;
   margin-bottom: 1rem;
 }
+#supplier .ilustration {
+  margin-top: 2rem;
+}
 @media (min-width: 640px) {
   #supplier .container > div {
     display: flex;
@@ -211,6 +215,10 @@ header .burgerMenu div:nth-child(3) {
   }
 }
 
+#clients .container {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
 #clients .description__item div {
   display: flex;
   align-items: center;
@@ -231,6 +239,9 @@ header .burgerMenu div:nth-child(3) {
   color: #EFD257;
   font-size: 30px;
 }
+#clients .ilustration {
+  margin-top: 2rem;
+}
 @media (min-width: 640px) {
   #clients .container > div {
     display: flex;
@@ -242,12 +253,15 @@ header .burgerMenu div:nth-child(3) {
   #clients .description {
     max-width: 50%;
   }
+  #clients .description {
+    order: 2;
+  }
 }
 
 footer {
   background-color: #E5E5E5;
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 footer .logo {
   display: flex;
@@ -272,4 +286,10 @@ footer .footer__item {
 footer .nav__links {
   display: flex;
   gap: 10px;
+}
+@media (min-width: 640px) {
+  footer .footer__item:nth-child(2) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }

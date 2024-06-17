@@ -127,9 +127,6 @@
         <section id="clients">
             <div class="container">
                 <div class="">
-                    <div class="ilustration">
-                        <img src="<?=ASSETS_URL?>images/undraw_web_search_re_efla (1).svg" alt="">
-                    </div>
                     <div class="description">
                         <div class="">
                             <h1>Find products besed on <span>your interests</span></h1>
@@ -149,6 +146,23 @@
                             </div>
                         </div>
                         <a href="">Get Started</a>
+                    </div>
+                    <div class="ilustration">
+                        <img src="<?=ASSETS_URL?>images/undraw_web_search_re_efla (1).svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="">
+            <div class="container">
+                <div class="">
+                    <div class="">
+                        
+                    </div>
+
+                    <div class="">
+
                     </div>
                 </div>
             </div>

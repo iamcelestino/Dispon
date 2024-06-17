@@ -13,12 +13,13 @@
                         </ul>
                     </div>
                 </div>
-                <div class="">
+                
+                <div class="footer__item">
                     <div class="">
-                        <p>&copy;Copyright, Deveoped by Celestino Trosso</p>
+                        <p> &copy;Copyright, Celestino Trosso</p>
                     </div>
                     <div class="">
-                        <p>Politcs and Privacy</p>
+                        <p> Politcs and Privacy</p>
                     </div>
                 </div>
             </div>

@@ -9,7 +9,6 @@
         padding-bottom: 5rem;
     }
 
-  
     .description {
         h1 {
             margin-top: 1rem;
@@ -29,6 +28,7 @@
         button {
             background-color: variable.$secondary-green;
             color: white;
+            margin-top: 0.5rem;
         }
     }
 
@@ -50,7 +50,6 @@
         }
     }
 }
-
 
 #products {
     background-color: variable.$primary-dark;
@@ -83,6 +82,8 @@
             gap: 10px;
             margin-bottom: 0;
         }
+
+
     }
     
 }
@@ -119,6 +120,10 @@
         }
     }
 
+    .ilustration {
+        margin-top: 2rem;
+    }
+
     @include mixin.sm {
         .container {
     
@@ -140,6 +145,10 @@
 }
 
 #clients {
+    .container {
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+    }
 
     .description__item {
             
@@ -170,6 +179,11 @@
         font-size: 30px;
     }
 
+    
+    .ilustration {
+        margin-top: 2rem;
+    }
+
     @include mixin.sm {
         .container {
     
@@ -184,6 +198,10 @@
         .ilustration, 
         .description {
             max-width: 50%;
+        }
+
+        .description {
+            order: 2;
         }
     }
 

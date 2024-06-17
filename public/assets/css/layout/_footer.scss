@@ -3,8 +3,8 @@
 
 footer {
     background-color: variable.$primary-dark;
-    padding-top: 5rem;
-    padding-bottom: 5rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
 
     .logo {
         display: flex;
@@ -24,6 +24,7 @@ footer {
         }
     }
 
+
     .footer__item {
         display: flex;
         flex-direction: column;
@@ -34,6 +35,13 @@ footer {
     .nav__links {
         display: flex;
         gap: 10px;
+    }
+
+    @include mixin.sm {
+        & .footer__item:nth-child(2) {
+            flex-direction: row;
+            justify-content: space-between;
+        }
     }
 }
 
