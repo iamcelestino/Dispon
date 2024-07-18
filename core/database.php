@@ -9,7 +9,7 @@ class Database {
 
     private $pdo;
 
-    public function connect()
+    public function connect(): PDO
     {
         try {
             
@@ -18,17 +18,34 @@ class Database {
                 PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
             ]);
 
-            echo "CONNECTED TO THE ". DBNAME . "DATABASE SUCCESSFULLY";
-
         } catch(PDOException $e) {
             echo "Connection failed". $e->getMessage();
         }
-    }
 
-    public function getConnetion() 
-    {
         return $this->pdo;
     }
 
+    public function query(string $query, array $data, string $data_type = "object"): mixed
+    {
+        $connection = $this->connect();
+        $stm = $connection->prepare($query);
+
+        if($stm) {
+            $check = $stm->execute($data);
+            if ($check) {
+                if ($data_type == "object") {
+                    $data = $stm->fetchAll(PDO::FETCH_OBJ);
+                }
+                else {
+                    $data = $stm->fetchAll(PDO::FETCH_ASSOC);
+                }
+
+                if(is_array($data) && count($data) > 0) {
+                    return $data;
+                }
+            }
+        }
+        return false;
+    }
 }
 

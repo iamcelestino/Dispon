@@ -4,10 +4,10 @@ declare(strict_types=1);
 use Core\Database;
 
 $db = new Database();
-$pdo = $db->getConnetion();
+$pdo = $db->connect();
 
 if($pdo) {
-    $stmt = $pdo->query('SELECT * FROM fornecedor');
+    $stmt = $pdo->query('SELECT * FROM ');
     $results = $stmt->fetchAll();
 
     echo "<pre>";

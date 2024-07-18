@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="<?=ASSETS_URL?>css/index.css">
+    <style> 
+    </style>
 </head>
 <body>
     

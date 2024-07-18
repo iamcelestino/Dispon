@@ -10,12 +10,13 @@
                         <ul class="nav__links">
                             <li><a href="<?= BASE_URL ?>about">About</a></li>
                             <li><a href="<?=  BASE_URL ?>contact">Contact</a></li>
+                            </li>
                         </ul>
                    </nav>
                 </div>
                 <div class="nav__buttons">
-                    <li><a href="">Login</a></li>
-                    <li><a href="">Post a Product</a></li>
+                    <li><a href="<?= BASE_URL?>/login">Login</a></li>
+                    <li><a href="<?=BASE_URL ?>signup">Sign up</a></li>
                 </div>
                 <div class="burgerMenu">
                     <div></div>
