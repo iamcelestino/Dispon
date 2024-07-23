@@ -3,15 +3,11 @@
 namespace App\Controllers;
 use Core\Controller;
 
-class signupController extends Controller {
+class Signup extends Controller {
 
     public function index() 
     {
         $this->view('signup', []);
     }
 
-    public function error() 
-    {
-        echo "this page doesn't exist";
-    }
 }

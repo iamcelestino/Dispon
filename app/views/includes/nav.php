@@ -15,7 +15,7 @@
                    </nav>
                 </div>
                 <div class="nav__buttons">
-                    <li><a href="<?= BASE_URL?>/login">Login</a></li>
+                    <li><a href="<?= BASE_URL?>login">Login</a></li>
                     <li><a href="<?=BASE_URL ?>signup">Sign up</a></li>
                 </div>
                 <div class="burgerMenu">

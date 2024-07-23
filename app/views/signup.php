@@ -55,7 +55,7 @@
                         name="password2" 
                         placeholder="Re-enter the password"
                     >
-                    <button>Add user</button>
+                    <button>Register</button>
                     <button>Cancel</button>
                 </div>
             </div>

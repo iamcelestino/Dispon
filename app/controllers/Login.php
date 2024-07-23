@@ -3,7 +3,7 @@
 namespace App\Controllers;
 use Core\Controller;
 
-class loginController extends Controller
+class login extends Controller
 {
     public function index() 
     {

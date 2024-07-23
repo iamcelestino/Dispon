@@ -22,6 +22,7 @@
                         name="password"
                         placeholder="Enter your password"
                     >
+                    <button>login</button>
                 </div>
             </div>
         </div>
