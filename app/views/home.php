@@ -37,7 +37,7 @@
                 <div class="product__box__container">
                     <div class="product__box">
                         <div class="product">
-                            <div class="">
+                            <!-- <div class="">
                                 <div class="">
                                     <h5 class="product__name">Rice</h5>
                                     <p class="supllier">Carrinho industria</p>
@@ -47,50 +47,11 @@
                                     <p class="price">3000kz</p>
                                     <p class="quantity">3</p>
                                 </div>
-                            </div>
-                        </div>
-
-                        <div class="product">
-                            <div class="">
-                                <div class="">
-                                    <h5 class="product__name">Rice</h5>
-                                    <p class="supllier">Carrinho industria</p>
-                                </div>
-                                <div class="">
-                                    <p class="location">Benguela</p>
-                                    <p class="price">3000kz</p>
-                                    <p class="quantity">3</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product__box">
-                        <div class="product">
-                            <div class="">
-                                <div class="">
-                                    <h5 class="product__name">Rice</h5>
-                                    <p class="supllier">Carrinho industria</p>
-                                </div>
-                                <div class="">
-                                    <p class="location">Benguela</p>
-                                    <p class="price">3000kz</p>
-                                    <p class="quantity">3</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="product">
-                            <div class="">
-                                <div class="">
-                                    <h5 class="product__name">Rice</h5>
-                                    <p class="supllier">Carrinho industria</p>
-                                </div>
-                                <div class="">
-                                    <p class="location">Benguela</p>
-                                    <p class="price">3000kz</p>
-                                    <p class="quantity">3</p>
-                                </div>
-                            </div>
+                            </div> -->
+                            <?php
+                                echo "<pre>";
+                                print_r($rows);
+                            ?>
                         </div>
                     </div>
                 </div>

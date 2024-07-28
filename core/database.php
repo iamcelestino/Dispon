@@ -9,11 +9,11 @@ class Database {
 
     private $pdo;
 
-    public function connect(): PDO
+    public function connect()
     {
         try {
             
-            $dsn = DBDRIVER .":host=".HOST.";dbname=".DBNAME.";charset=UTF-8";
+            $dsn = "mysql:host=" . HOST . ";dbname=" . DBNAME . ";charset=utf8";
             $this->pdo = new PDO($dsn, USER, PASSWORD, [
                 PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
             ]);
@@ -25,7 +25,7 @@ class Database {
         return $this->pdo;
     }
 
-    public function query(string $query, array $data = [], string $data_type = "object"): mixed
+    public function query(string $query, array $data = [], string $data_type = "object")
     {
         $connection = $this->connect();
         $stm = $connection->prepare($query);

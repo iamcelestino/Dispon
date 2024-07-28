@@ -1,17 +1,15 @@
 <?php 
 
-declare(strict_types=1);
-
-
 namespace Core;
 
 class Controller {
-    public function view($view, $data = []):void {
+
+    public function view( $view, $data = []) {
 
         extract($data);
         
-        if(file_exists('../app/views/' . $view . '.php')) {
-            
+        if(file_exists('../app/views/' . $view . '.php')) 
+        {
             require_once ('../app/views/' . $view . '.php');
         }
         else {
@@ -19,14 +17,18 @@ class Controller {
         }
     }
 
-    public function load_model($model)
-    {
-        if(file_exists("./app/model/".ucfirst($model)."php"))
-        {
-            require("./app/model/".ucfirst($model)."php");
-            return $model = new $model();
+    public function load_model($model) {
+
+        $modelPath = "App\\Model\\" . $model;
+
+        if (class_exists($modelPath)) {
+
+            return new $modelPath();
+            
+        } else {
+
+            throw new \Exception("Model class $modelPath not found");
         }
-        return false;
     }
 }
 

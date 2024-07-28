@@ -11,6 +11,7 @@ class App {
     public function __construct()
     {
         $URL = $this->parseUrl();
+        
         if(file_exists("../app/controllers/".$URL[0].".php"))
         {
             $this->controller = ucfirst($URL[0]);
@@ -31,7 +32,6 @@ class App {
 
         $URL = array_values($URL);
         $this->params = $URL;
-        
         call_user_func_array([$this->controller,$this->method], $this->params);
 
     }

@@ -5,13 +5,16 @@ use Core\Database;
 
 class Model extends Database 
 {
-    protected $table = "users";
+    protected $table;
 
     function __construct()
     {
-        
+        if (property_exists($this, 'table')) 
+        {
+            $this->table = strtolower((new \ReflectionClass($this))->getShortName()) . "s";
+        }  
     }
-
+    
     public function where($column, $value)
     {
         $column = addslashes($column);
@@ -23,7 +26,7 @@ class Model extends Database
 
     public function findAll()
     {
-        $query = "SELECT * FROM ". $this->table;
+        $query = " SELECT * FROM ". $this->table;
         return $this->query($query);
     }
 
