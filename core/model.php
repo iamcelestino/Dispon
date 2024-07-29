@@ -30,4 +30,15 @@ class Model extends Database
         return $this->query($query);
     }
 
+    public function insert($data) 
+    {
+        
+
+    }
+
+
+    public function update($id, $value) {
+
+    }
+
 }

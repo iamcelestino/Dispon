@@ -1,7 +1,7 @@
 <?php $this->view('includes/head') ?>
 <?php $this->view('includes/nav') ?>
 <main>
-        <section id="banner" >
+        <section id="banner" class="bg-black">
             <div class="container">
                 <div class="banner__description">
                     <div class="ilustration">

@@ -20,14 +20,6 @@
                         name="email" 
                         placeholder="Enter email"
                     >
-
-                    <label for="firstname">Password</label>
-                    <input 
-                        type="password" 
-                        name="password" 
-                        placeholder="password"
-                    >
-
                     <select name="" id="">
                         <option value="">Select Gender</option>
                         <option value="">Male</option>

@@ -17,9 +17,9 @@
                                     <ion-icon name="chevron-down-outline"></ion-icon>
                                 </div>
                                 <div class="dropdown__content">
-                                    <li class="dropdown__item"><a href="<?= BASE_URL ?>/profile">Profile</a></li>
+                                    <li class="dropdown__item"><a href="<?= BASE_URL ?>profile">Profile</a></li>
                                     <li class="dropdown__item"><a href="<?=  BASE_URL ?>">Dashboard</a></li>
-                                    <li class="dropdown__item"><a href="<?= BASE_URL ?>/logout">Logout</a></li>
+                                    <li class="dropdown__item"><a href="<?= BASE_URL ?>logout">Logout</a></li>
                                 </div>
                             </li>
                         </ul>
