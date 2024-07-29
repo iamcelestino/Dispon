@@ -9,5 +9,5 @@
     <style> 
     </style>
 </head>
-<body class="">
+<body class="text-xl">
     

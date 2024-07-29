@@ -32,13 +32,37 @@ class Model extends Database
 
     public function insert($data) 
     {
-        
+       $keys = array_keys($data);
+       $columns = implode(',', $keys);
+       $values = implode(',:', $keys);
 
+       $query = "INSERT INTO $this->table($columns) VALUES(:$values)";
+
+       return $this->query($query, $data);
     }
 
+    public function update($id, $data) 
+    {
+     
+        $string = '';
 
-    public function update($id, $value) {
+        foreach ($data as $key => $value) {
+            $string .= $key. "=:".$key.",";
+        }
 
+        $strg = trim($string, ",");
+
+        $data['id'] = $id;
+
+        $query = "UPDATE $this->table SET $strg WHERE id = :id";
+        return $this->query($query, $data);
+    }
+
+    public function delete($id)
+    {
+        $query = "DELETE FROM $this->table WHERE id = :id";
+        $data['id'] = $id;
+        return $this->query($query, $data);
     }
 
 }
