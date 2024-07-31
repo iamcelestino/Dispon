@@ -4,6 +4,7 @@ namespace Core;
 
 class Controller {
 
+
     public function view( $view, $data = []) {
 
         extract($data);
@@ -26,9 +27,15 @@ class Controller {
             return new $modelPath();
             
         } else {
-
+            
             throw new \Exception("Model class $modelPath not found");
         }
+    }
+
+    public function redirect($link)
+    {
+        header("Location". BASE_URL . "/".trim($link, "/"));
+        die;
     }
 }
 

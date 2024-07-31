@@ -6,6 +6,7 @@ use Core\Database;
 class Model extends Database 
 {
     protected $table;
+    public $errors = [];
 
     function __construct()
     {
