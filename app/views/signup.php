@@ -26,18 +26,18 @@
                             <option value="Male">Male</option>
                             <option value="Female">Female</option>
                         </select>
-                        <select name="Role" id="">
+                        <select name="role" id="">
                             <option value="">Select a Role</option>
-                            <option value="Client">client</option>
-                            <option value="Supplier">Suplier</option>
+                            <option value="Client">Client</option>
+                            <option value="Supplier">Supplier</option>
                             <option value="Admin">Admin</option>
-                            <option value="Super-Admin">Super Admin</option>
+                            <option value="Super-Admin">Super-Admin</option>
                         </select>
                        
                         <input
                             type="password"
                             name="password"
-                            placeholder="password"
+                            placeholder="Enter your password"
                         >
                         
                         <input

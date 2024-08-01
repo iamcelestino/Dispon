@@ -4,7 +4,6 @@ namespace Core;
 
 class Controller {
 
-
     public function view( $view, $data = []) {
 
         extract($data);
@@ -34,7 +33,7 @@ class Controller {
 
     public function redirect($link)
     {
-        header("Location". BASE_URL . "/".trim($link, "/"));
+        header("Location: ". BASE_URL .trim($link, "/"));
         die;
     }
 }

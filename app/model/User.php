@@ -10,30 +10,31 @@ class User extends Model
        $this->errors = [];
 
        if (empty($DATA['username'])) {
-        $this->errors['username'] = "your name is correct";
+        $this->errors['username'] = "Please enter a valid name";
        }
 
        if (empty($DATA['password']) || $DATA['password'] != $DATA['password']) {
         $this->errors['password'] = "The Password does not match";
        }
 
-       $gender = ['female', 'male'];
-       if (empty($DATA['gender']) || in_array($DATA['gender'], $gender) ) {
-        $this->errors['gender'] = "The gender does not match";
+       $gender = ['Female', 'Male'];
+       if (empty($DATA['gender']) || !in_array($DATA['gender'], $gender) ) {
+        $this->errors['gender'] = "Please Select a gender";
        }
 
-       $role = ['Client', 'Admin', 'Supllier', 'Super-Admin'];
-       if (empty($DATA['role']) || in_array($DATA['role'], $role) ) {
-        $this->errors['role'] = "The role does not match";
+       $role = ['Client', 'Admin', 'Supplier', 'Super-Admin'];
+       if (empty($DATA['role']) || !in_array($DATA['role'], $role) ) {
+        $this->errors['role'] = "Please Select a role";
        }
 
        if (empty($DATA['email']) || !filter_var($DATA['email'], FILTER_VALIDATE_EMAIL)) {
-        $this->errors['email'] = "";
+        $this->errors['email'] = "Enter a valid email please";
        }
 
        if(count($this->errors) == 0) {
         return true;
        }
+       
        return false;
     }
 }

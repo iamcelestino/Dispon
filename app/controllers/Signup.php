@@ -10,13 +10,14 @@ class Signup extends Controller {
     public function index() 
     {   
         $errors = [];
+        
         if(count($_POST) > 0) {
             
             $user = new User();
 
             if($user->validate($_POST)) {
 
-                $this->redirect('login');
+                $this->redirect('Login');
 
             }
             else {

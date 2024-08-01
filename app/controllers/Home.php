@@ -5,7 +5,6 @@ use Core\Controller;
 
 class Home extends Controller 
 {
-
     public function index()
     {
         $user = $this->load_model('User');
