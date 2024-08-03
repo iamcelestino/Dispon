@@ -27,7 +27,7 @@
                         <select name="gender" id="">
                             <option <?= getSelect('gender', ''); ?> value="">Select Gender</option>
                             <option <?= getSelect('gender', 'Male'); ?> value="Male">Male</option>
-                            <option <?= getSelect('gender', 'Female'); ?> value="Female">Female</option
+                            <option <?= getSelect('gender', 'Female'); ?> value="Female">Female</option>
                         </select>
                         <select name="role" id="">
                             <option  <?= getSelect('role', ''); ?> value="">Select a Role</option>
@@ -36,14 +36,12 @@
                             <option  <?= getSelect('role', 'Admin'); ?> value="Admin">Admin</option>
                             <option  <?= getSelect('role', 'Super-Admin'); ?> value="Super-Admin">Super-Admin</option>
                         </select>
-                       
                         <input
                             type="password"
                             name="password"
                             value="<?= getVar('password'); ?>"
                             placeholder="Enter your password"
                         >
-                        
                         <input
                             type="password"
                             name="password2"
