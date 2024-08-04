@@ -17,12 +17,16 @@ class User extends Model
         $this->errors['password'] = "The Password does not match";
        }
 
+       if ($DATA['password'] <= 8) {
+        $this->errors['password'] = "Password must be at least 8 carecters long";
+       }
+
        $gender = ['Female', 'Male'];
        if (empty($DATA['gender']) || !in_array($DATA['gender'], $gender) ) {
         $this->errors['gender'] = "Please Select a gender";
        }
 
-       $role = ['Client', 'Admin', 'Supplier', 'Super-Admin'];
+       $role = ['Client', 'Supplier', 'Admin', 'Super-Admin'];
        if (empty($DATA['role']) || !in_array($DATA['role'], $role) ) {
         $this->errors['role'] = "Please Select a role";
        }
