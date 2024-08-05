@@ -1,6 +1,8 @@
 <?php
 
 namespace Core;
+
+use App\Model\User;
 use Core\Database;
 
 class Model extends Database 
@@ -31,8 +33,32 @@ class Model extends Database
         return $this->query($query);
     }
 
-    public function insert($data) 
-    {
+    public function insert($data)
+    {   
+
+        $user = new User();
+
+        //remove unwanted columns
+        if(property_exists($this, 'allowedColumns'))
+        {
+            foreach($data as $key => $columns) 
+            {
+
+                if(!in_array($key, $user->allowedColumns))
+                {
+                    unset($data[$key]);
+                }
+            }
+        } 
+
+        //run functions before insert the data to the table
+        if(property_exists($this, 'beforeInsert'))
+        {
+            foreach($user->beforeInsert as $func) {
+                $data = $this->$func($data);
+            }
+        } 
+
        $keys = array_keys($data);
        $columns = implode(',', $keys);
        $values = implode(',:', $keys);

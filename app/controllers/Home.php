@@ -1,22 +1,23 @@
 <?php
 
 namespace App\Controllers;
+
+use App\Model\Auth;
 use Core\Controller;
 
 class Home extends Controller 
 {
     public function index()
     {
+
+        if(!Auth::isLoggedIn()) {
+
+            $this->redirect('login');
+
+        }
+        
         $user = $this->load_model('User');
 
-        // $arr['username'] = 'user117';
-        // $arr['password'] = 'hashedpassword117';
-        // $arr['email'] = 'user117@example.com';
-        // $arr['role'] = 'supplier';
-
-        // $user->insert($arr);
-        // $user->update(17, $arr);
-        //  $user->delete(24);
         $data = $user->findAll();
 
         $this->view('home', ['rows' => $data]);

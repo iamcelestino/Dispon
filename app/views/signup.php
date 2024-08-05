@@ -41,10 +41,10 @@
                         </select>
                         <select name="role" id="">
                             <option  <?= getSelect('role', ''); ?> value="">Select a Role</option>
-                            <option  <?= getSelect('role', 'Client'); ?> value="Client">Client</option>
-                            <option  <?= getSelect('role', 'Supplier'); ?> value="Supplier">Supplier</option>
-                            <option  <?= getSelect('role', 'Admin'); ?> value="Admin">Admin</option>
-                            <option  <?= getSelect('role', 'Super-Admin'); ?> value="Super-Admin">Super-Admin</option>
+                            <option  <?= getSelect('role', 'client'); ?> value="client">Client</option>
+                            <option  <?= getSelect('role', 'supplier'); ?> value="supplier">Supplier</option>
+                            <option  <?= getSelect('role', 'admin'); ?> value="admin">Admin</option>
+                            <option  <?= getSelect('role', 'super-admin'); ?> value="super-admin">Super-Admin</option>
                         </select>
                         <input
                             type="password"
