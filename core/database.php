@@ -12,16 +12,13 @@ class Database {
     public function connect()
     {
         try {
-            
             $dsn = "mysql:host=" . HOST . ";dbname=" . DBNAME . ";charset=utf8";
             $this->pdo = new PDO($dsn, USER, PASSWORD, [
                 PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
             ]);
-
         } catch(PDOException $e) {
             echo "Connection failed". $e->getMessage();
         }
-
         return $this->pdo;
     }
 

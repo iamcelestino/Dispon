@@ -21,7 +21,7 @@ class Model extends Database
     public function where($column, $value)
     {
         $column = addslashes($column);
-        $query = "SELECT * FROM ". $this->table . " WHERE". $column = ":value";
+        $query = "SELECT * FROM " . $this->table . " WHERE " . $column . " = :value";
         return $this->query($query, [
             'value' => $value
         ]);
@@ -38,7 +38,6 @@ class Model extends Database
 
         $user = new User();
 
-        //remove unwanted columns
         if(property_exists($this, 'allowedColumns'))
         {
             foreach($data as $key => $columns) 
@@ -51,7 +50,6 @@ class Model extends Database
             }
         } 
 
-        //run functions before insert the data to the table
         if(property_exists($this, 'beforeInsert'))
         {
             foreach($user->beforeInsert as $func) {

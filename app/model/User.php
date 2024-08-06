@@ -11,6 +11,7 @@ class User extends Model
         'password',
         'gender',
         'role',
+        'created_at',
     ];
 
     public $beforeInsert = [
