@@ -1,3 +1,6 @@
+<?php
+use App\Model\Auth;
+?>
 <header class="">
     <div class="container">
         <div class="">
@@ -6,14 +9,14 @@
                     <ion-icon class="text-3xl" name="pie-chart"></ion-icon>
                     <h1 class="text-3xl font-bold" ><a href="<?= BASE_URL ?>">d<span class="is">is</span><span class="po">po</span>n</a></h1>
                 </div>
-                <nav class="hidden">
+                <nav class="">
                     <ul class="nav__links flex items-center justify-center">
                         <li class=""><a href="<?= BASE_URL ?>about">About</a></li>
                         <li class="ml-4"><a href="<?= BASE_URL ?>contact">Contact</a></li>
                         <li class="ml-4"><a href="<?= BASE_URL ?>contact">Products</a></li>
                         <li class="nav__items dropdown ml-4">
                             <div class="nav__dropdown__link flex items-center justify-center">
-                                <a href="<?=  BASE_URL ?>contact">User</a>
+                                <a href="<?=  BASE_URL ?>contact"><?= Auth::getUsername() ?></a>
                                 <ion-icon name="chevron-down-outline"></ion-icon>
                             </div>
                             <div class="dropdown__content">

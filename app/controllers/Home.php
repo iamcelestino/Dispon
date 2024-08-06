@@ -13,7 +13,6 @@ class Home extends Controller
         if(!Auth::isLoggedIn()) {
 
             $this->redirect('login');
-
         }
         
         $user = $this->load_model('User');

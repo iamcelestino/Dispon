@@ -6,7 +6,6 @@ function getVar($key) {
 
         return $_POST[$key];
     } 
-
     return "";
 }
 
