@@ -4,7 +4,7 @@
 <main>
     <section>
         <div class="container">
-            <h1>This is the Contact page</h1>
+            <h1>This is the this the product page</h1>
         </div>
     </section>
 </main>

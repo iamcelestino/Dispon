@@ -48,7 +48,6 @@ class User extends Model
         $this->errors['role'] = "Please Select a role";
        }
 
-
        if(count($this->errors) == 0) {
         return true;
        }

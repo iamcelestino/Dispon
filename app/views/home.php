@@ -5,29 +5,18 @@
             <div class="container py-16">
                 <div class="banner__description md:flex items-center gap-4">
                     <div class="ilustration">
-                        <img src="<?=ASSETS_URL?>images/undraw_map_dark_re_36sy.svg" alt="">
+                        <img src="<?=ASSETS_URL?>images/undraw_world_re_768g.svg" alt="">
                     </div>
                     <div class="description mt-5">
-                        <h1 class="font-bold text-3xl">Find The <span>Perfect </span>Product for you</h1>
+                        <h1 class="font-bold text-3xl mb-4">Find The <span>Perfect </span>Product for you</h1>
                         <p>Find you products in hours not weeks, from you favorities suppliers, search for free</p>
-                        <form action="">
-                            <div class="">
-                                <input type="search" placeholder="Product name">
-                                <button type="submit">Search</button>
-                            </div>
-                        </form>
+                        <div class="mt-4">
+                            <li class="bg-indigo-500 text-white text-center inline-block py-2 px-6 list-none font-bold rounded-md"><a href="<?=BASE_URL ?>login">Login</a></li>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
-
-        <section id="companies">
-            <div class="container">
-                <div>
-                </div>
-            </div>
-        </section>
-
 
         <section id="supplier">
             <div class="container py-16">
@@ -50,13 +39,13 @@
                         </div>
                     </div>
                     <div class="ilustration mt-8 md:w-2/4">
-                        <img src="<?=ASSETS_URL?>images/undraw_post_online_re_1b82.svg" alt="">
+                        <img src="<?=ASSETS_URL?>images/undraw_publish_article_re_3x8h.svg" alt="">
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="products" class="bg-gray-200">
+        <section id="products" class="bg-gray-100">
             <div class="container py-16">
                 <div class="description  text-center">
                     <h1 class="font-bold text-2xl">The best Products for you here</h1>
@@ -129,7 +118,7 @@
             </div>
         </section>
 
-        <section class="bg-gray-200">
+        <!-- <section class="bg-gray-200">
             <div class="container py-16">
                 <h1 class="font-bold text-3xl text-center mb-8">HOW IT WORKS?</h1>
                 <div class="flex flex-col md:flex-row items-center gap-4">
@@ -162,6 +151,6 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
     </main>
 <?php $this->view('includes/footer') ?>

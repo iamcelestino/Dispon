@@ -11,7 +11,7 @@
                             <h1 class="font-bold text-3xl mb-4">Hey There!</h1>
                             <h4 class="">Welcome back</h4>
                             <p class="">You are just one step away to your account</p>
-                        </div>
+                        </div>  
                         <div class="text-slate-300">
                             <p class="mb-4">Don't have an account</p>
                             <a class="inline-block border-2  border-white rounded-md py-2 px-6 font-bold" href="">sign up</a>
@@ -33,6 +33,10 @@
                         </div>
                     <?php endif; ?>
                     <div class="p-6 md:p-12">
+                        <div class="logo flex items-center">
+                            <ion-icon class="text-3xl" name="pie-chart"></ion-icon>
+                            <h1 class="text-3xl font-bold" ><a href="<?= BASE_URL ?>">d<span class="is">is</span><span class="po">po</span>n</a></h1>
+                        </div>
                         <label class="mb-4" for="username">email</label>
                         <input 
                             class="w-full p-2 bg-white"
