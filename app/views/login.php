@@ -4,20 +4,7 @@
 <main class="flex items-center justify-center min-h-screen">
     <section class="">
         <div class="container">
-            <div class=" bg-slate-100 sm:grid grid-cols-2">
-                <div class="bg-indigo-500 p-12">
-                    <div class="text-center">
-                        <div class="text-white mb-4">
-                            <h1 class="font-bold text-3xl mb-4">Hey There!</h1>
-                            <h4 class="">Welcome back</h4>
-                            <p class="">You are just one step away to your account</p>
-                        </div>  
-                        <div class="text-slate-300">
-                            <p class="mb-4">Don't have an account</p>
-                            <a class="inline-block border-2  border-white rounded-md py-2 px-6 font-bold" href="">sign up</a>
-                        </div>
-                    </div>
-                </div>
+            <div class="">
                 <form method="POST">
                     <?php if(count($errors) > 0): ?>
                         <div id="errors" class="flex items-center justify-between p-4 bg-red-400  mb-4 text-sm text-white rounded-lg" role="alert">
@@ -31,29 +18,29 @@
                         </div>
                     <?php endif; ?>
                     <div class="p-6 md:p-12">
-                        <div class="logo flex items-center">
+                        <div class="logo flex items-center justify-center">
                             <ion-icon class="text-3xl" name="pie-chart"></ion-icon>
                             <h1 class="text-3xl font-bold" ><a href="<?= BASE_URL ?>">d<span class="is">is</span><span class="po">po</span>n</a></h1>
                         </div>
-                        <label class="mb-4" for="username">email</label>
+                        <label class="mb-2" for="username">email</label>
                         <input 
-                            class="w-full p-2 bg-white"
+                            class="w-full p-2 bg-white border-2 border-indigo-500 rounded-lg mt-4"
                             value="<?= getVar('email'); ?>"
                             id="email"
                             type="email"
                             name="email"
                             placeholder="Enter your email"
                         >
-                        <label class="mb-4" for="Password">Password</label>
+                        <label class="" for="Password">Password</label>
                         <input
-                            class="w-full p-2"
+                            class="w-full p-2 border-2 border-indigo-500 rounded-lg mt-2"
                             value="<?= getVar('password'); ?>"
                             id="password"
                             type="password"
                             name="password"
                             placeholder="Enter your password"
                         >
-                        <button class="w-full bg-indigo-500 text-white font-bold py-2 mt-4">login</button>
+                        <button class="w-full bg-indigo-500 text-white font-bold py-2 mt-4 rounded-lg">login</button>
                     </div>
                 </form> 
             </div>
