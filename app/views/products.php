@@ -4,7 +4,9 @@
 <main>
     <section>
         <div class="container">
-            <h1>This is the this the product page</h1>
+            <a  href="<?= BASE_URL ?>product/add">
+                <button>add product</button>
+            </a>
         </div>
     </section>
 </main>

@@ -1,45 +1,36 @@
 <?php $this->view('includes/head'); ?>
-<?php $this->view('includes/nav') ?>
 <?php require __DIR__ . '/../../core/helpers.php' ?>
 
-<main>
+<main class="flex items-center justify-center min-h-screen">
     <section class="">
         <div class="container">
-                <div class="">
-                    <?php if(count($errors) > 0): ?>
-                        <div id="errors" class="flex items-center justify-between p-4 bg-red-400  mb-4 text-sm text-white rounded-lg" role="alert">
-                            <p><span class="font-medium">Errors:</span> 
-                            <?php foreach ($errors as  $error): ?>
-                            <br> <?=$error ?></p>
-                            <?php endforeach; ?>
-                            <button type="button" class="ml-2 text-blue-700 focus:outline-none" onclick="dismissAlert()">
-                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-                            </svg>
-                            </button>
-                        </div>
-                    <?php endif; ?>
-                <form method="POST">
-                    <img src="" alt="">
-                    <div>
+            <div class="">
+                <form method="POST" class="">
+                    <div class="logo flex justify-center items-center mb-4">
+                        <ion-icon class="text-3xl" name="pie-chart"></ion-icon>
+                        <h1 class="text-3xl font-bold text-center" ><a href="<?= BASE_URL ?>">d<span class="is">is</span><span class="po">po</span>n</a></h1>
+                    </div>
+                    <div class="flex flex-col items-center ">
                         <input
+                            class="border-2 border-indigo-500 rounded-lg w-full mb-3"
                             type="text"
                             name="username"
                             value="<?= getVar('username'); ?>"
                             placeholder="First Name
                         ">
                         <input
+                            class="border-2 border-indigo-500 rounded-lg mb-3"
                             type="email"
                             name="email"
                             value="<?= getVar('email'); ?>"
                             placeholder="Enter email"
                         >
-                        <select name="gender" id="">
+                        <select name="gender" id="" class="border-2 border-indigo-500 rounded-lg w-full mb-3">
                             <option <?= getSelect('gender', ''); ?> value="">Select Gender</option>
                             <option <?= getSelect('gender', 'Male'); ?> value="Male">Male</option>
                             <option <?= getSelect('gender', 'Female'); ?> value="Female">Female</option>
                         </select>
-                        <select name="role" id="">
+                        <select name="role" id="" class="border-2 border-indigo-500 rounded-lg w-full mb-3">
                             <option  <?= getSelect('role', ''); ?> value="">Select a Role</option>
                             <option  <?= getSelect('role', 'client'); ?> value="client">Client</option>
                             <option  <?= getSelect('role', 'supplier'); ?> value="supplier">Supplier</option>
@@ -47,21 +38,23 @@
                             <option  <?= getSelect('role', 'super-admin'); ?> value="super-admin">Super-Admin</option>
                         </select>
                         <input
+                            class="border-2 border-indigo-500 rounded-lg mb-3"
                             type="password"
                             name="password"
                             value="<?= getVar('password'); ?>"
                             placeholder="Enter your password"
                         >
                         <input
+                            class="border-2 border-indigo-500 rounded-lg mb-3"
                             type="password"
                             name="password2"
                             value="<?= getVar('password2'); ?>"
                             placeholder="Re-enter the password"
                         >
-                        <button>Register</button>
+                        <button class="bg-indigo-500 w-full text-white p-2 rounded-lg">Register</button>
                     </div>
                 </form>
-                </div>
+             </div>
         </div>
     </section>
 </main>
