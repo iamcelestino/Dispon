@@ -6,37 +6,44 @@ use Core\Model;
 class Product  extends Model 
 {
     protected $allowedColumns = [
+        'supplier_id',
+        'category_id',
         'name',
         'description',
         'price',
-        'gender',
-        'sku',
+        'created_at'
     ];
+
+    public $beforeInsert = [];
 
     public function validate($DATA) 
     {
-       $this->errors = [];
 
-       if (empty($DATA['name'])) {
+       if(empty($DATA['name'])) 
+       {
         $this->errors['name'] = "Please enter a valid name";
        }
 
-       if (empty($DATA['description'])) {
+       if (empty($DATA['description'])) 
+       {
         $this->errors['description'] = "please enter a valid description";
        }
 
-       if (empty($DATA['price'] || is_string($DATA['price']) || is_bool($DATA['price']))) {
-        $this->errors['price'] = "Insert the right price of product";
-       }
+        if (empty($DATA['price']) || !is_numeric($DATA['price'])) 
+        {
+            $this->errors['price'] = "Insert the right price of product";
+        }
 
-       if (empty($DATA['sku'])) {
-        $this->errors['sku'] = "enter a valid sku";
-       }
+       $category_id = ['H&B', 'ELE', 'CLT'];
+        if (empty($DATA['category_id']) || !in_array($DATA['category_id'], $category_id)) 
+        {
+            $this->errors[''] = "Please Select a category";
+        }
 
        if(count($this->errors) == 0) {
         return true;
        }
-       
+
        return false;
     }
 }

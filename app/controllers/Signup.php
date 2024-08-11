@@ -24,6 +24,7 @@ class Signup extends Controller {
                 $errors = $user->errors;
             }
         }
+        
         $this->view('signup', [
             'errors' => $errors
         ]);

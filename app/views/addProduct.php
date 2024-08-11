@@ -6,60 +6,44 @@
     <section class="">
         <div class="container">
                 <div class="">
-                <form method="POST">
-                    <img src="" alt="">
-                    <div class="flex flex-col">
-                        <input
-                            class="border-2 border-indigo-500 rounded-lg mb-2"
-                            type="text"
-                            name="name"
-                            value="<?= getVar('name'); ?>"
-                            placeholder="Product name"
-                        ">
+                    <form method="POST">
+                        <div class="flex flex-col">
+                            <input
+                                class="border-2 border-indigo-500 rounded-lg mb-2"
+                                type="text"
+                                name="name"
+                                value="<?= getVar('category_name'); ?>"
+                                placeholder="Product name"
+                            ">
 
-                        <textarea 
-                            class="border-2 border-indigo-500 rounded-lg  mb-2"
-                            name="desciption" 
-                            id=""
-                            value="<?= getVar('description'); ?>"
-                        >
-                        </textarea>
+                            <textarea 
+                                class="border-2 border-indigo-500 rounded-lg  mb-2"
+                                name="description" 
+                                id=""
+                                value="<?= getVar('description'); ?>"
+                            >
+                            </textarea>
 
-                        <input
-                            class="border-2 border-indigo-500 rounded-lg mb-2"
-                            type="Number"
-                            name="price"
-                            value="<?= getVar('price'); ?>"
-                            placeholder="Price"
-                        ">
-
-                        <input
-                            class="border-2 border-indigo-500 rounded-lg"
-                            type="text"
-                            name="sku"
-                            value="<?= getVar('sku'); ?>"
-                            placeholder="Sku"
-                        ">
-                        <select name="category" id="" class="mb-2">
-                            <option  <?= getSelect('category', ''); ?> value="">Select a category</option>
-                            <option  <?= getSelect('category', 'eletronics'); ?> value="ELT">eletronics</option>
-                            <option  <?= getSelect('category', 'fashion'); ?> value="FSN">Fashion</option>
-                            <option  <?= getSelect('category', 'home & kitchen'); ?> value="H&K">Home & Kitchen</option>
-                            <option  <?= getSelect('category', 'Health & beauty'); ?> value="H&B">Health & beauty</option>
-                        </select>
-                        <button class="bg-indigo-500 text-white p-2 rounded-lg">add Product</button>
-                    </div>
-                </form>
+                            <input
+                                class="border-2 border-indigo-500 rounded-lg mb-2"
+                                type="Number"
+                                name="price"
+                                step="0.001"
+                                value="<?= getVar('price'); ?>"
+                                placeholder="Price"
+                            ">
+                            <select name="category_id" id="" class="mb-2">
+                                <option  <?= getSelect('category_id', ''); ?>    value="">category</option>
+                                <option  <?= getSelect('category_id', 'H&B'); ?> value="H&B">Health & beauty</option>
+                                <option  <?= getSelect('category_id', 'ELE'); ?> value="ELE">Electronics</option>
+                                <option  <?= getSelect('category_id', 'CLT'); ?> value="CLT">Clothing</option>
+                            </select>
+                            <button class="bg-indigo-500 text-white p-2 rounded-lg">add Product</button>
+                        </div>
+                    </form>
                 </div>
         </div>
     </section>
 </main>
-
-<script>
-
-  function dismissAlert() {
-    document.getElementById('alert').style.display = 'none';
-  }
-</script>
 
 <?php $this->view('includes/footer') ?>

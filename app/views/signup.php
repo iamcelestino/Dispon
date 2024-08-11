@@ -35,7 +35,6 @@
                             <option  <?= getSelect('role', 'client'); ?> value="client">Client</option>
                             <option  <?= getSelect('role', 'supplier'); ?> value="supplier">Supplier</option>
                             <option  <?= getSelect('role', 'admin'); ?> value="admin">Admin</option>
-                            <option  <?= getSelect('role', 'super-admin'); ?> value="super-admin">Super-Admin</option>
                         </select>
                         <input
                             class="border-2 border-indigo-500 rounded-lg mb-3"

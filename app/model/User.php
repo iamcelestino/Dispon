@@ -43,7 +43,7 @@ class User extends Model
         $this->errors['gender'] = "Please Select a gender";
        }
 
-       $role = ['client', 'supplier', 'admin', 'super-admin'];
+       $role = ['client', 'supplier', 'admin'];
        if (empty($DATA['role']) || !in_array($DATA['role'], $role) ) {
         $this->errors['role'] = "Please Select a role";
        }

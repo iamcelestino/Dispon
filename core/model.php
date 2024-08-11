@@ -2,7 +2,7 @@
 
 namespace Core;
 
-use App\Model\User;
+use App\Model\{User, Product};
 use Core\Database;
 
 class Model extends Database 
@@ -36,14 +36,13 @@ class Model extends Database
     public function insert($data)
     {   
 
-        $user = new User();
 
         if(property_exists($this, 'allowedColumns'))
         {
             foreach($data as $key => $columns) 
             {
 
-                if(!in_array($key, $user->allowedColumns))
+                if(!in_array($key, $this->allowedColumns))
                 {
                     unset($data[$key]);
                 }
@@ -52,7 +51,7 @@ class Model extends Database
 
         if(property_exists($this, 'beforeInsert'))
         {
-            foreach($user->beforeInsert as $func) {
+            foreach($this->beforeInsert as $func) {
                 $data = $this->$func($data);
             }
         } 
