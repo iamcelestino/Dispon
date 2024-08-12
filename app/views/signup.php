@@ -1,5 +1,4 @@
 <?php $this->view('includes/head'); ?>
-<?php require __DIR__ . '/../../core/helpers.php' ?>
 
 <main class="flex items-center justify-center min-h-screen">
     <section class="">

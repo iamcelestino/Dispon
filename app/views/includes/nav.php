@@ -22,7 +22,7 @@ use App\Model\Auth;
             <div class="nav__buttons hidden md:flex items-center">
                 <li class="group relative  ml-4 list-none">
                     <div class="flex items-center justify-center">
-                        <a href="<?=  BASE_URL ?>contact"><?= Auth::getUsername() ?></a>
+                        <a href="<?=  BASE_URL ?>contact"><?= escape(Auth::getUsername()); ?></a>
                         <ion-icon name="chevron-down-outline"></ion-icon>
                     </div>
                     <div class="hidden group-hover:block absolute bg-gray-100 min-w-[100px] shadow-lg z-10">
