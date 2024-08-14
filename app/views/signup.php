@@ -56,12 +56,4 @@
         </div>
     </section>
 </main>
-
-<script>
-
-  function dismissAlert() {
-    document.getElementById('alert').style.display = 'none';
-  }
-</script>
-
 <?php $this->view('includes/footer') ?>

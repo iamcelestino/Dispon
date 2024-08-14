@@ -9,7 +9,7 @@
                     </div>
                     <div class="description mt-5">
                         <h1 class="font-bold text-3xl mb-4">Find The <span>Perfect </span>Product for you</h1>
-                        <p>Find you products in hours not weeks, from you favorities suppliers, search for free</p>
+                        <p>Find  your best products in hours not weeks, from your favorities suppliers, search for free</p>
                         <div class="mt-4">
                             <li class="bg-indigo-500 text-white text-center inline-block py-2 px-6 list-none font-bold rounded-md"><a href="<?=BASE_URL ?>login">Login</a></li>
                         </div>
@@ -20,11 +20,13 @@
 
         <section id="supplier">
             <div class="container py-16">
-                <div class="md:flex items-center">
+                <div class="md:flex items-center gap-20">
                     <div class="description md:w-2/4">
-                        <div class="">
+                        <div class="mb-4">
                             <h4 class="font-bold">Suppliers</h4>
-                            <h1 class="font-bold text-2xl">Looking to post a product?</h1>
+                            <h1 class="font-bold text-2xl mt-2">Looking to post a product?</h1>
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam obcaecati delectus molestias dicta laboriosam voluptas vitae libero dolores eligendi?.
+                         </p>
                         </div>
                         <div class="description__item">
                             <div class="flex items-center gap-1">
@@ -35,7 +37,7 @@
                                 <ion-icon name="checkmark-done-circle"></ion-icon>
                                 <p> expose products to clients</p>
                             </div>
-                            <a class="inline-block font-bold bg-indigo-600 rounded-md py-2 px-4 text-white" href="">Post a product for free</a>
+                            <a class="inline-block font-bold bg-indigo-600 rounded-md py-2 px-4 mt-2 text-white" href="">Post a product for free</a>
                         </div>
                     </div>
                     <div class="ilustration mt-8 md:w-2/4">
@@ -91,9 +93,10 @@
             <div class="container py-16">
                 <div class="md:flex items-center">
                     <div class="description md:w-2/4 order-2">
-                        <div class="font-bold text-2xl mb-4">
-                            <h3 class="">Clients</h3>
-                            <h1 class="">Find products besed on <span>your interests</span></h1>
+                        <div class="  mb-4">
+                            <h3 class="font-bold text-2xl">Clients</h3>
+                            <h1 class="font-bold text-2xl">Find products besed on <span>your interests</span></h1>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur, nemo molestiae. Amet eveniet ducimus, autem dignissimos, fugiat aperiam repellendus veniam.</p>
                         </div>
                         <div class="description__item">
                             <div class="flex items-center gap-1 mb-2">

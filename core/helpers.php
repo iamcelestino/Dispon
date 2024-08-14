@@ -1,12 +1,12 @@
 <?php
 
-function getVar($key) {
+function getVar($key, $default = '') {
 
     if (isset($_POST[$key])) {
 
         return $_POST[$key];
     } 
-    return "";
+    return $default;
 }
 
 function getSelect($key, $value) {
@@ -22,8 +22,10 @@ function getSelect($key, $value) {
 }
 
 function escape($var) {
-    
     return htmlspecialchars($var);
+}
 
+function get_Date($date) {
+    return date("jS F,Y", strtotime($date));
 }
 

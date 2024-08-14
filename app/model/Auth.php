@@ -33,7 +33,6 @@ class Auth
         {
             return $_SESSION['USER']->username;
         }
-
         return false;
     }
 
