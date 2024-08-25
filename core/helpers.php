@@ -1,6 +1,7 @@
 <?php
 
-function getVar($key, $default = '') {
+function getVar($key, $default = '') 
+{
 
     if (isset($_POST[$key])) {
 
@@ -9,7 +10,8 @@ function getVar($key, $default = '') {
     return $default;
 }
 
-function getSelect($key, $value) {
+function getSelect($key, $value) 
+{
 
     if (isset($_POST[$key])) {
 
@@ -21,11 +23,19 @@ function getSelect($key, $value) {
     return "";
 }
 
-function escape($var) {
+function escape($var) 
+{
     return htmlspecialchars($var);
 }
 
-function get_Date($date) {
+function get_Date($date) 
+{
     return date("jS F,Y", strtotime($date));
+}
+
+function dd($data) {
+    echo "<pre";
+        print_r($data);
+    echo "</pre>";
 }
 

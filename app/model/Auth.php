@@ -17,7 +17,6 @@ class Auth
         }
     }
 
-    
     public static function isLoggedIn() 
     {
         if(isset($_SESSION['USER']))
@@ -25,6 +24,10 @@ class Auth
             return true;
         }
         return false;
+    }
+
+    public static function getRole() {
+        return $_SESSION['role'] ?? null;
     }
 
     public static function user()

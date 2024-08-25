@@ -16,9 +16,14 @@ class Home extends Controller
         }
         
         $user = $this->load_model('User');
-
         $data = $user->findAll();
+        $product = $this->load_model('Product');
+        $productData = $product->findAll();
 
-        $this->view('home', ['rows' => $data]);
+
+        $this->view('home', [
+            'rows' => $data,
+            'products' => $productData
+        ]);
     }
 }

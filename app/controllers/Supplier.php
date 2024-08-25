@@ -18,5 +18,21 @@ class Supplier extends Controller
         $data = $user->where('role', 'supplier');
         $this->view('suppliers', ['rows' => $data]);
     }
+
+    public function products()
+    {
+
+        if(!Auth::isLoggedIn()) {
+
+            $this->redirect('login');
+        }
+
+        $products = $this->load_model('Product');
+        $supplierProducts = $products->where('supplier_id', Auth::getId());
+
+        $this->view('supplierProducts', [
+            'supplerProducts' => $supplierProducts
+        ]);
+    }
 }
 

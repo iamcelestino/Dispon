@@ -13,9 +13,9 @@ use App\Model\Auth;
             <div>
             <nav class="hidden md:block ml-4">
                 <ul class="nav__links flex items-center justify-center">
-                    <li class=""><a href="<?= BASE_URL ?>about">About</a></li>
-                    <li class="ml-4"><a href="<?= BASE_URL ?>supplier">Suppliers</a></li>
+                    <li class=""><a href="<?= BASE_URL ?>supplier">Suppliers</a></li>
                     <li class="ml-4"><a href="<?= BASE_URL ?>product">Products</a></li>
+                    <li class="ml-4"><a href="<?= BASE_URL ?>about">About</a></li>
                 </ul>
             </nav>
             </div>

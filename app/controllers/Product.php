@@ -95,13 +95,13 @@ class Product extends Controller
 
     public function delete($id = null)
     {
-        $errors = [];
 
         if (!Auth::isLoggedIn()) {
             $this->redirect('login');
         }
 
         $product = $this->load_model('Product');
+        
         if (count($_POST) > 0) {
             $user_id = Auth::getId();
 
@@ -112,6 +112,7 @@ class Product extends Controller
             $this->redirect('Product');
   
         }
+
         $row = $product->where('id',$id);
 
         if($row)
@@ -121,9 +122,6 @@ class Product extends Controller
         
         $this->view('deleteProduct', [
             'row' => $row,
-            'errors' => $errors
         ]);
     }
-
-
 }
