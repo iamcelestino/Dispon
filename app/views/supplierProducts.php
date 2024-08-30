@@ -1,8 +1,7 @@
 <?php $this->view('includes/head'); ?>
 <?php $this->view('includes/nav') ?>
 
-<main>
-    
+<main> 
 <section class="">
         <div class="container">
             <div class="">
@@ -16,8 +15,7 @@
                                     <img src="https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-02.jpg" alt="Olive drab green insulated bottle with flared screw lid and flat top." class="h-full w-full object-cover object-center group-hover:opacity-75">
                                     </div>
                                     <h3 class="mt-4 text-sm text-gray-700"><?= escape($product->name); ?></h3>
-                                    <p class="mt-1 text-lg font-medium text-gray-900"><?= escape($product->price); ?></p>
-                                    <p class="mt-1 text-lg font-medium text-gray-900">Supplier:<?=escape($product->user->username); ?></p>
+                                    <p class="mt-1 text-lg font-medium text-gray-900">AOA <?= escape($product->price); ?></p>
                                 </a>
                             <?php endforeach; ?>
                         <?php else: ?>

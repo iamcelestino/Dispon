@@ -14,7 +14,6 @@
                                 value="<?= getVar('category_name', $row->name); ?>"
                                 placeholder="Product name"
                             ">
-
                             <textarea 
                                 class="border-2 border-indigo-500 rounded-lg  mb-2"
                                 name="description"
@@ -23,7 +22,6 @@
                                 value="<?= getVar('description', $row->description); ?>"
                             >
                             </textarea>
-
                             <input
                                 class="border-2 border-indigo-500 rounded-lg mb-2"
                                 type="Number"

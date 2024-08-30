@@ -82,8 +82,8 @@
                                     <img src="https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-02.jpg" alt="Olive drab green insulated bottle with flared screw lid and flat top." class="h-full w-full object-cover object-center group-hover:opacity-75">
                                     </div>
                                     <h3 class="mt-4 text-sm text-gray-700"><?= escape($product->name); ?></h3>
-                                    <p class="mt-1 text-lg font-medium text-gray-900"><?= escape($product->price); ?></p>
-                                    <p class="mt-1 text-lg font-medium text-gray-900">Supplier:<?=escape($product->user->username); ?></p>
+                                    <p class="mt-1 text-lg font-medium text-gray-900">AOA <?= escape($product->price); ?></p>
+                                    <p class="mt-1 text-sm text-gray-900"><span class="font-bold">Supplier:</span> <?=escape($product->user->username); ?></p>
                                 </a>
                             <?php endforeach; ?>
                         <?php else: ?>
@@ -95,71 +95,36 @@
         </div>
     </section>
 
-        <section id="clients">
-            <div class="container py-16">
-                <div class="md:flex items-center">
-                    <div class="description md:w-2/4 order-2">
-                        <div class="  mb-4">
-                            <h3 class="font-bold text-2xl">Clients</h3>
-                            <h1 class="font-bold text-3xl my-2">Find products besed on <span>your interests</span></h1>
-                            <p class="text-slate-500">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur, nemo molestiae. Amet eveniet ducimus, autem dignissimos, fugiat aperiam repellendus veniam.</p>
-                        </div>
-                        <div class="description__item text-slate-500">
-                            <div class="flex items-center gap-1 mb-2">
-                                <ion-icon name="checkmark-done-circle"></ion-icon>
-                                <p>every kind of products</p>
-                            </div>
-                            <div class="flex items-center gap-1 mb-2">
-                                <ion-icon name="checkmark-done-circle"></ion-icon>
-                                <p>Get products from supplies </p>
-                            </div>
-                            <div class="flex items-center gap-1 mb-2">
-                                <ion-icon name="checkmark-done-circle"></ion-icon>
-                                <p>Get in touch with them </p>
-                            </div>
-                        </div>
-                        <a class="inline-block font-bold bg-indigo-600 rounded-md py-2 px-4 text-white" href="<?= BASE_URL ?>product">Get Started</a>
+    <section id="clients">
+        <div class="container py-16">
+            <div class="md:flex items-center">
+                <div class="description md:w-2/4 order-2">
+                    <div class="  mb-4">
+                        <h3 class="font-bold text-2xl">Clients</h3>
+                        <h1 class="font-bold text-3xl my-2">Find products besed on <span>your interests</span></h1>
+                        <p class="text-slate-500">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur, nemo molestiae. Amet eveniet ducimus, autem dignissimos, fugiat aperiam repellendus veniam.</p>
                     </div>
-                    <div class="ilustration mt-8 md:w-2/4">
-                        <img src="<?=ASSETS_URL?>images/undraw_web_search_re_efla (1).svg" alt="">
+                    <div class="description__item text-slate-500">
+                        <div class="flex items-center gap-1 mb-2">
+                            <ion-icon name="checkmark-done-circle"></ion-icon>
+                            <p>every kind of products</p>
+                        </div>
+                        <div class="flex items-center gap-1 mb-2">
+                            <ion-icon name="checkmark-done-circle"></ion-icon>
+                            <p>Get products from supplies </p>
+                        </div>
+                        <div class="flex items-center gap-1 mb-2">
+                            <ion-icon name="checkmark-done-circle"></ion-icon>
+                            <p>Get in touch with them </p>
+                        </div>
                     </div>
+                    <a class="inline-block font-bold bg-indigo-600 rounded-md py-2 px-4 text-white" href="<?= BASE_URL ?>product">Get Started</a>
+                </div>
+                <div class="ilustration mt-8 md:w-2/4">
+                    <img src="<?=ASSETS_URL?>images/undraw_web_search_re_efla (1).svg" alt="">
                 </div>
             </div>
-        </section>
-
-        <!-- <section class="bg-gray-200">
-            <div class="container py-16">
-                <h1 class="font-bold text-3xl text-center mb-8">HOW IT WORKS?</h1>
-                <div class="flex flex-col md:flex-row items-center gap-4">
-                    <div class="">
-                        <div class="">
-                            <div class="bg-white p-4 rounded-md flex items-center border-2 border-indigo-500 justify-start mb-4">
-                                <ion-icon name="checkmark-done-circle"></ion-icon>
-                                <p>Sign up on our website</p>
-                            </div>
-                            <div class="bg-white p-4 rounded-md flex items-center border-2 border-indigo-500 justify-start">
-                                <ion-icon name="checkmark-done-circle"></ion-icon>
-                                <p>Look for products of insterest</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="md:w-2/4">
-                        <img src="<?=ASSETS_URL?>images/undraw_interview_re_e5jn.svg" alt="">
-                    </div>
-
-                    <div class="">
-                        <div class="bg-white p-4 rounded-md flex items-center border-2 border-indigo-500 justify-start mb-4">
-                            <ion-icon name="checkmark-done-circle"></ion-icon>
-                            <p>Check if the product is available</p>
-                        </div>
-                        <div class="bg-white p-4 rounded-md flex items-center border-2 border-indigo-500 justify-start">
-                            <ion-icon name="checkmark-done-circle"></ion-icon>
-                            <p>take number of the supplier and that's it.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section> -->
+        </div>
+    </section>
     </main>
 <?php $this->view('includes/footer') ?>

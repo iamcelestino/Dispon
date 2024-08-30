@@ -21,7 +21,6 @@ class Supplier extends Controller
 
     public function products()
     {
-
         if(!Auth::isLoggedIn()) {
 
             $this->redirect('login');
