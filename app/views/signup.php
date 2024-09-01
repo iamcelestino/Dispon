@@ -29,12 +29,20 @@
                             <option <?= getSelect('gender', 'Male'); ?> value="Male">Male</option>
                             <option <?= getSelect('gender', 'Female'); ?> value="Female">Female</option>
                         </select>
-                        <select name="role" id="" class="border-2 border-indigo-500 rounded-lg w-full mb-3">
-                            <option  <?= getSelect('role', ''); ?> value="">Select a Role</option>
-                            <option  <?= getSelect('role', 'client'); ?> value="client">Client</option>
-                            <option  <?= getSelect('role', 'supplier'); ?> value="supplier">Supplier</option>
-                            <option  <?= getSelect('role', 'admin'); ?> value="admin">Admin</option>
-                        </select>
+                        <?php if($mode == 'client' || $mode = 'supllier'): ?>
+                            <select name="role" id="" class="border-2 border-indigo-500 rounded-lg w-full mb-3">
+                                <option  <?= getSelect('role', ''); ?> value="">Select a Role</option>
+                                <option  <?= getSelect('role', 'client'); ?> value="client">Client</option>
+                                <option  <?= getSelect('role', 'supplier'); ?> value="supplier">Supplier</option>
+                            </select>
+                        <?php else: ?>
+                            <select name="role" id="" class="border-2 border-indigo-500 rounded-lg w-full mb-3">
+                                <option  <?= getSelect('role', ''); ?> value="">Select a Role</option>
+                                <option  <?= getSelect('role', 'client'); ?> value="client">Client</option>
+                                <option  <?= getSelect('role', 'supplier'); ?> value="supplier">Supplier</option>
+                                <option  <?= getSelect('role', 'admin'); ?> value="admin">Admin</option>
+                            </select>
+                        <?php endif; ?>
                         <input
                             class="border-2 border-indigo-500 rounded-lg mb-3"
                             type="password"

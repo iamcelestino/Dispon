@@ -1,8 +1,8 @@
 <?php
 
 namespace App\Controllers;
-use App\Model\Auth;
 use Core\Controller;
+use App\Model\{Auth, Product};
 
 class Supplier extends Controller
 {
@@ -19,19 +19,27 @@ class Supplier extends Controller
         $this->view('suppliers', ['rows' => $data]);
     }
 
-    public function products()
+    public function products($id = null)
     {
         if(!Auth::isLoggedIn()) {
 
             $this->redirect('login');
         }
 
-        $products = $this->load_model('Product');
-        $supplierProducts = $products->where('supplier_id', Auth::getId());
+        $supplier_id = $id;
 
-        $this->view('supplierProducts', [
-            'supplerProducts' => $supplierProducts
-        ]);
+        if($supplier_id) {
+            $products = $this->load_model('Product');
+            
+            $supplierProducts = $products->where('supplier_id', $supplier_id);
+
+            $this->view('supplierProducts', [
+                'supplerProducts' => $supplierProducts
+            ]);
+        }
+        else {
+            $this->redirect('suppliers');
+        }
     }
 }
 

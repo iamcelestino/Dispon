@@ -13,7 +13,7 @@
                         <p class=""><?= escape($row->email) ?></p>
                         <div>
                             <a href="<?= BASE_URL ?>profile">Profile</a>
-                            <a href="<?= BASE_URL ?>supplier/products">See All Products</a>
+                            <a href="<?= BASE_URL ?>supplier/products/<?=$row->id ?>">See All Products</a>
                         </div>
                     </div>
                 </div>
