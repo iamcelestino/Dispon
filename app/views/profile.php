@@ -42,12 +42,12 @@ use App\Model\Auth;
 
 <main>
     <section>
-        <div class="container py-16">
-            <div class="sm:flex items-center justify-center ">
+        <div class="container py-16 ">
+            <div class="sm:flex items-center justify-center">
                 <div class="md:w-1/4">
                     <img class="" src="<?=ASSETS_URL?>images/undraw_pic_profile_re_7g2h.svg" alt="">
                 </div>
-                <div>
+                <div class="px-4">
                     <div>
                         <span class="font-bold">Username</span>
                         <span><?= escape(Auth::getUsername()); ?></span>

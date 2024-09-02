@@ -3,11 +3,27 @@
 
 <main>
     <section>
-        <div class="container">
+        <div class="container py-16">
             <div class="">
-                <a  href="<?= BASE_URL ?>product/add">
+                <form action="" class="">
+                    <div class="sm:flex items-center justify-between">
+                        <div>
+                            <select name="category_id" id="" class="mb-2">
+                                <option  <?= getSelect('category_id', ''); ?>    value="">category</option>
+                                <option  <?= getSelect('category_id', 'H&B'); ?> value="H&B">Health & beauty</option>
+                                <option  <?= getSelect('category_id', 'ELE'); ?> value="ELE">Electronics</option>
+                                <option  <?= getSelect('category_id', 'CLT'); ?> value="CLT">Clothing</option>
+                            </select>
+                        </div>
+                        <div class="">
+                            <input class="border-4 boder-indigo-500" type="text" name="search">
+                            <button class="bg-indigo-500 text-white font-bold py-2 px-6 rounded-md">Search</button>
+                        </div>
+                    </div>
+                </form>
+                <!-- <a  href="<?= BASE_URL ?>product/add">
                     <button class="bg-indigo-500 text-white py-2 px-4 font-bold rounded-lg">add product</button>
-                </a>
+                </a> -->
             </div>
             <div class="bg-white">
                 <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
@@ -22,6 +38,7 @@
                                     <h3 class="mt-4 text-sm text-gray-700"><?= escape($row->name); ?></h3>
                                     <p class="mt-1 text-lg font-medium text-gray-900">AOA <?= escape($row->price); ?></p>
                                     <p class="mt-1 text-sm font-medium text-gray-900">Date:<?= escape(get_Date($row->created_at)); ?></p>
+                                    <p class="mt-1 text-sm font-medium text-gray-900">Date:<?= escape($row->user->username); ?></p>
                                 </a>
                                 <div>
                                     <a href="<?= BASE_URL ?>product/delete/<?= $row->id ?>" class="">
