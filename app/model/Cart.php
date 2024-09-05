@@ -14,4 +14,5 @@ class Cart extends Model {
     protected $beforeInsert = [];
 
     protected $afterSelect = [];
+  
 }
