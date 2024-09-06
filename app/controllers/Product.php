@@ -124,4 +124,27 @@ class Product extends Controller
             'row' => $row,
         ]);
     }
+
+    public function details($id = null)
+    {   
+        if (!Auth::isLoggedIn()) {
+            $this->redirect('login');
+        }
+
+        $product = $this->load_model('Product');
+
+        $row = $product->where('id',$id);
+
+        if($row)
+        {
+            $row = $row[0];
+
+        }else {
+            $this->redirect('Product'); 
+        }
+        
+        $this->view('details', [
+            'row' => $row,
+        ]);
+    }
 }

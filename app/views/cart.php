@@ -18,12 +18,13 @@
                             <p class="mt-1 text-lg font-medium text-gray-900">AOA 9000</p>
                             <p class="mt-1 text-sm font-medium text-gray-900">Supplier: Celestino Trosso</p>
                             <div>
-                            <a href="" class="">
-                                <ion-icon class="" name="trash-bin"></ion-icon>
-                            </a>
-                            <a href="" class="">
-                                <ion-icon class="text-indigo-500" name="create"></ion-icon>
-                            </a>
+                                <a href="" class="">
+                                    <ion-icon class="" name="trash-bin"></ion-icon>
+                                </a>
+                                <a href="" class="">
+                                    <ion-icon class="text-indigo-500" name="create"></ion-icon>
+                                </a>
+                            </div>
                         </div>
                         </a>
                     </div>
