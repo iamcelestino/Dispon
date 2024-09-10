@@ -34,5 +34,4 @@ class Cart extends Controller {
         $this->view('cart');
     }
 
-
 }

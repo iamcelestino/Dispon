@@ -16,7 +16,7 @@
                     <div class="">
                         <form action="<?= BASE_URL ?>cart/add" method="POST">
                             <div>
-                               <input class="inline md:w-2/4" type="Number" placeholder="Quantity">
+                               <input class="inline md:w-2/4" type="Number" name="quantity">
                                <input type="hidden" class="inline md:w-2/4" name="product_id" value="<?= escape($row->id); ?>">
                                 <a  class="inline-block bg-indigo-500 text-white p-2 rounded-md  md:w-2/2  text-center" href="">
                                     <ion-icon name="cart"></ion-icon>
