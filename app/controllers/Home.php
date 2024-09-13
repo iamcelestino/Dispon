@@ -19,7 +19,7 @@ class Home extends Controller
         $data = $user->findAll();
         
         $product = $this->load_model('Product');
-        $productData = $product->findAll();
+        $productData = $product->findAll('ASC', 4);
 
         $this->view('home', [
             'rows' => $data,

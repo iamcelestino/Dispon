@@ -20,6 +20,11 @@ use App\Model\Auth;
             </nav>
             </div>
             <div class="nav__buttons hidden md:flex items-center">
+                <li class="list-none">
+                    <a href="<?=BASE_URL ?>cart">
+                        <ion-icon class="text-3xl" name="cart-outline"></ion-icon>
+                    </a>
+                </li>
                 <li class="group relative  ml-4 list-none">
                     <div class="flex items-center justify-center">
                         <a href="<?=  BASE_URL ?>contact"><?= escape(Auth::getUsername()); ?></a>

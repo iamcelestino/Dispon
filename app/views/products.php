@@ -7,14 +7,16 @@
             <div class="">
                 <form action="" class="">
                     <div class="sm:flex items-center justify-between">
-                        <div>
-                            <select name="category_id" id="" class="mb-2">
-                                <option  <?= getSelect('category_id', ''); ?>    value="">category</option>
-                                <option  <?= getSelect('category_id', 'H&B'); ?> value="H&B">Health & beauty</option>
-                                <option  <?= getSelect('category_id', 'ELE'); ?> value="ELE">Electronics</option>
-                                <option  <?= getSelect('category_id', 'CLT'); ?> value="CLT">Clothing</option>
-                            </select>
-                        </div>
+                        <form>
+                            <div>
+                                <select name="category_id" id="" class="mb-2">
+                                    <option  <?= getSelect('category_id', ''); ?>    value="">category</option>
+                                    <option  <?= getSelect('category_id', 'H&B'); ?> value="H&B">Health & beauty</option>
+                                    <option  <?= getSelect('category_id', 'ELE'); ?> value="ELE">Electronics</option>
+                                    <option  <?= getSelect('category_id', 'CLT'); ?> value="CLT">Clothing</option>
+                                </select>
+                            </div>
+                        </form>
                         <div class="">
                             <input class="border-4 boder-indigo-500" type="text" name="search">
                             <button class="bg-indigo-500 text-white font-bold py-2 px-6 rounded-md">Search</button>
