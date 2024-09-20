@@ -70,13 +70,15 @@
         </section>
 
     <section class="bg-gray-200">
-        <div class="container">
+        <div class="container py-16">
             <div class="">
-                <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+                <h1 class="font-bold text-3xl text-center">Check Out Our Latest Products</h1>
+                <div class="mx-auto max-w-2xl px-4  sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
                     <h2 class="sr-only">Products</h2>
                     <div class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
                         <?php if($products): ?>
-                            <?php foreach($products as $product): ?>
+                            <?php for($i = 0; $i < count($products) && $i < 4; $i++): ?>
+                                <?php $product = $products[$i] ?>
                                 <a href="#" class="group">
                                     <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
                                     <img src="https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-02.jpg" alt="Olive drab green insulated bottle with flared screw lid and flat top." class="h-full w-full object-cover object-center group-hover:opacity-75">
@@ -85,7 +87,7 @@
                                     <p class="mt-1 text-lg font-medium text-gray-900">AOA <?= escape($product->price); ?></p>
                                     <p class="mt-1 text-sm text-gray-900"><span class="font-bold">Supplier:</span> <?=escape($product->user->username); ?></p>
                                 </a>
-                            <?php endforeach; ?>
+                            <?php endfor; ?>
                         <?php else: ?>
                             <h3>No products were found at this time</h3>
                         <?php endif; ?>

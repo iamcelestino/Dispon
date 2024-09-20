@@ -35,11 +35,13 @@ class Cart extends Controller {
             $this->redirect('login');
         }
 
+        $userdata = ['user_id' => Auth::getId()];
+
         $cart = new CartModel();
-        $cart->insert($data = ['user_id' => Auth::getId()]);
+        $cart->insert($userdata);
 
         $data = [
-            'cart_id' => 1,
+            'cart_id' => $this->getCartId($userdata),
             'product_id' => $_POST['product_id'] ?? null,
             'quantity' => $_POST['quantity'] ?? 1
         ];
@@ -47,7 +49,7 @@ class Cart extends Controller {
         $cartItem = new CartItem();
         $cartItem->insert($data);
 
-        $this->view('cart');
+       $this->redirect('cart');
     }
 
     public function delete($id = null)
@@ -60,21 +62,8 @@ class Cart extends Controller {
         $cartItem = new CartItem();
         $cartItem->delete($id);
 
-        
-        $cartProducts = new CartItem();
-        $products = $cartProducts->query('SELECT a.id, a.name, a.description, a.price, b.username, c.quantity
-                                            FROM products as a 
-                                            INNER JOIN users as b on a.supplier_id = b.id
-                                            INNER JOIN cartitems as c ON a.id = c.product_id'
-                                        );
 
-        $totalPrice = $this->totalPrice($products); 
-        
-        $this->view('cart', [
-            'cartProducts' => $products,
-            'totalPrice' => $totalPrice
-        ]);
-
+        $this->redirect('cart');
     }
 
     public function totalPrice($products)
@@ -86,4 +75,10 @@ class Cart extends Controller {
         return $total;
     }
 
+    public function getCartId($data)
+    {
+        $cart = new CartModel();
+        $cartId = $cart->query('SELECT id FROM carts WHERE user_id = ?', $data);
+        return $cartId->id ?? null;
+    }
 }
