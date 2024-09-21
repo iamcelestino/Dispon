@@ -8,7 +8,6 @@ class Cart extends Controller {
     
     public function index()
     {
-       
         if(!Auth::isLoggedIn()) {
     
             $this->redirect('login');
@@ -35,21 +34,24 @@ class Cart extends Controller {
             $this->redirect('login');
         }
 
-        $userdata = ['user_id' => Auth::getId()];
+        $userId = Auth::getId();
 
-        $cart = new CartModel();
-        $cart->insert($userdata);
+        $cartId = $this->getCartId($userId);
 
-        $data = [
-            'cart_id' => $this->getCartId($userdata),
-            'product_id' => $_POST['product_id'] ?? null,
-            'quantity' => $_POST['quantity'] ?? 1
-        ];
-
-        $cartItem = new CartItem();
-        $cartItem->insert($data);
-
-       $this->redirect('cart');
+        if($cartId) {
+            $data = [
+                'cart_id' => $cartId,
+                'product_id' => $_POST['product_id'] ?? null,
+                'quantity' => $_POST['quantity'] ?? 1
+            ];
+    
+            $cartItem = new CartItem();
+            $cartItem->insert($data);
+    
+           $this->redirect('cart');
+        }else {
+            echo "COULD NOT CREATE OR RETRIEVE A CART";
+        }
     }
 
     public function delete($id = null)
@@ -61,7 +63,6 @@ class Cart extends Controller {
         
         $cartItem = new CartItem();
         $cartItem->delete($id);
-
 
         $this->redirect('cart');
     }
@@ -75,10 +76,15 @@ class Cart extends Controller {
         return $total;
     }
 
-    public function getCartId($data)
+    public function getCartId($userId)
     {
         $cart = new CartModel();
-        $cartId = $cart->query('SELECT id FROM carts WHERE user_id = ?', $data);
-        return $cartId->id ?? null;
+        $cartIds = $cart->query('SELECT id FROM carts WHERE user_id = :user_id', ['user_id' => $userId]);
+
+        if ($cartIds && count($cartIds) > 0) {
+            return $cartIds[0]->id; 
+        }
+
+        $cart->insert(['user_id' => $userId]);
     }
 }
