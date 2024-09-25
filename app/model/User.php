@@ -10,6 +10,7 @@ class User extends Model
         'email',
         'password',
         'gender',
+        'address',
         'role',
         'created_at',
     ];
@@ -41,6 +42,11 @@ class User extends Model
        $gender = ['Female', 'Male'];
        if (empty($DATA['gender']) || !in_array($DATA['gender'], $gender) ) {
         $this->errors['gender'] = "Please Select a gender";
+       }
+
+       $address = ['Lobito', 'Bocoio', 'Ganda', 'Cubal'];
+       if (empty($DATA['address']) || !in_array($DATA['address'], $address) ) {
+        $this->errors['address'] = "Please Select a address";
        }
 
        $role = ['client', 'supplier', 'admin'];

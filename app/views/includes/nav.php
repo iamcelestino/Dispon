@@ -33,6 +33,7 @@ use App\Model\Auth;
                     <div class="hidden group-hover:block absolute bg-gray-100 min-w-[100px] shadow-lg z-10">
                         <a class="float-none text-black px-4 py-3 no-underline block text-left" href="<?= BASE_URL ?>profile">Profile</a>
                         <a class="float-none text-black px-4 py-3 no-underline block text-left"  href="<?=  BASE_URL ?>">Dashboard</a>
+                        <a class="float-none text-black px-4 py-3 no-underline block text-left"  href="<?=  BASE_URL ?>order">My Orders</a>
                         <a class="float-none text-black px-4 py-3 no-underline block text-left"  href="<?= BASE_URL ?>logout">Logout</a>
                     </div>
                 </li>

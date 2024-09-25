@@ -29,6 +29,15 @@
                             <option <?= getSelect('gender', 'Male'); ?> value="Male">Male</option>
                             <option <?= getSelect('gender', 'Female'); ?> value="Female">Female</option>
                         </select>
+
+                        <select name="address" id="address" class="border-2 border-indigo-500 rounded-lg w-full mb-3">
+                            <option <?= getSelect('address', ''); ?> value="">Select your Address</option>
+                            <option <?= getSelect('address', 'Lobito'); ?> value="Lobito">Lobito</option>
+                            <option <?= getSelect('address', 'Cubal'); ?> value="Cubal">Cubal</option>
+                            <option <?= getSelect('address', 'Bocoio'); ?> value="Bocoio">Bocoio</option>
+                            <option <?= getSelect('address', 'Ganda'); ?> value="Ganda">Ganda</option>
+                        </select>
+
                         <?php if($mode == 'client' || $mode = 'supllier'): ?>
                             <select name="role" id="" class="border-2 border-indigo-500 rounded-lg w-full mb-3">
                                 <option  <?= getSelect('role', ''); ?> value="">Select a Role</option>

@@ -42,10 +42,11 @@
                         <?php else: ?>
                             <p>There's no product in the cart</p>
                         <?php endif ?>
-                            <form action="">
-                                <a class="inline-block bg-indigo-500 text-white font-medium px-8 py-2" href="">
+                            <form action="<?= BASE_URL ?>order/create" method="POST">
+                                <input type="hidden" name="total" value="<?= escape($totalPrice) ?>">
+                                <button type="submit" class="inline-block bg-indigo-500 text-white font-medium px-8 py-2">
                                     Checkout
-                                </a>
+                                </button>
                             </form>
                     </div>
                 </div>

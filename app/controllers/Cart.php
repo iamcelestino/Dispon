@@ -18,7 +18,8 @@ class Cart extends Controller {
                                             FROM products as a 
                                             INNER JOIN users as b on a.supplier_id = b.id
                                             INNER JOIN cartitems as c ON a.id = c.product_id'
-                                        );                           
+                                        );
+                                                                   
         $totalPrice = $this->totalPrice($products); 
 
         $this->view('cart', [
