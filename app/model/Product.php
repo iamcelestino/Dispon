@@ -11,6 +11,7 @@ class Product  extends Model
         'name',
         'description',
         'price',
+        'status',
         'created_at'
     ];
 
@@ -33,6 +34,11 @@ class Product  extends Model
        if (empty($DATA['description'])) 
        {
         $this->errors['description'] = "please enter a valid description";
+       }
+
+       if (empty($DATA['status'])) 
+       {
+        $this->errors['status'] = "please enter a valid";
        }
 
         if (empty($DATA['price']) || !is_numeric($DATA['price'])) 

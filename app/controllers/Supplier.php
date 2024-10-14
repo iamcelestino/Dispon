@@ -16,7 +16,10 @@ class Supplier extends Controller
         $user = $this->load_model('User');
 
         $data = $user->where('role', 'supplier');
-        $this->view('suppliers', ['rows' => $data]);
+        $this->view('suppliers', [
+            'title' => 'Suppliers',
+            'rows' => $data
+        ]);
     }
 
     public function products($id = null)

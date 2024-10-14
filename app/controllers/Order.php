@@ -17,6 +17,7 @@ class Order extends Controller {
         $orders = $order->findAll();
 
         $this->view('myOrders', [
+            'title' => 'My Orders',
             'orders' => $orders
         ]);
     }
@@ -40,6 +41,11 @@ class Order extends Controller {
         $orders->insert($data);
 
         $this->redirect('cart');
+    }
+
+    public function update($id = null) 
+    {
+
     }
 }
 

@@ -22,6 +22,7 @@ class Home extends Controller
         $productData = $product->findAll();
 
         $this->view('home', [
+            'title' => 'DISPON',
             'rows' => $data,
             'products' => $productData
         ]);

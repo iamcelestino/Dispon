@@ -28,6 +28,7 @@ class Signup extends Controller {
         $mode = isset($_GET['mode']) ? $_GET['mode'] : '';
 
         $this->view('signup', [
+            'title' => 'Sign up',
             'errors' => $errors,
             'mode' => $mode
         ]);

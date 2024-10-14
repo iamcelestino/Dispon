@@ -28,6 +28,7 @@ class login extends Controller
             $errors['email'] = "Wrong email or password";
         }
         $this->view('login', [
+            'title' => 'Login',
             'errors' => $errors
         ]);
     }

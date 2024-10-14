@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App\Controllers;
 use App\Model\Auth;
+use App\Model\Product as ModelProduct;
 use Core\Controller;
-
 
 class Product extends Controller 
 {
@@ -17,11 +17,27 @@ class Product extends Controller
             $this->redirect('login');
         }
         
-        $product = $this->load_model('Product');
+        $products = $this->load_model('Product');
 
-        $data = $product->findAll();
+        $data = false;
 
-        $this->view('products', ['rows' => $data]);
+        if(!empty($_POST['name'])) {
+
+            $product = new ModelProduct();
+            $name = "%" .trim($_POST['name']). "%";
+
+            $query = "SELECT * FROM products WHERE name LIKE  :prod_name";
+            $data = $product->query($query, ['prod_name' => $name]);
+        }
+        else {
+            $errors[] = "please Type a name to find";
+            $data = $products->findAll();
+        }
+
+        $this->view('products', [
+            'title' => 'Products',
+            'rows' => $data
+        ]);
     }
 
     public function add()
@@ -41,7 +57,7 @@ class Product extends Controller
             $_POST['price'] = (float)$_POST['price'];
 
             if($product->validate($_POST)) {
-
+                
                 $product->insert($_POST);
                 $this->redirect('Product');
             }

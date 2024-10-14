@@ -15,6 +15,12 @@
                                 placeholder="Product name"
                             ">
 
+                            <input
+                                type="hidden"
+                                name="status"
+                                value="Available"
+                            ">
+
                             <textarea 
                                 class="border-2 border-indigo-500 rounded-lg  mb-2"
                                 name="description" 
@@ -31,7 +37,8 @@
                                 value="<?= getVar('price'); ?>"
                                 placeholder="Price"
                             ">
-                            <select name="category_id" id="" class="mb-2">
+
+                            <select name="category_id" class="mb-2">
                                 <option  <?= getSelect('category_id', ''); ?>    value="">category</option>
                                 <option  <?= getSelect('category_id', 'H&B'); ?> value="H&B">Health & beauty</option>
                                 <option  <?= getSelect('category_id', 'ELE'); ?> value="ELE">Electronics</option>

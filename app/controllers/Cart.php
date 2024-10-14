@@ -23,6 +23,7 @@ class Cart extends Controller {
         $totalPrice = $this->totalPrice($products); 
 
         $this->view('cart', [
+            'title' => 'Cart',
             'cartProducts' => $products,
             'totalPrice' => $totalPrice
         ]);

@@ -7,6 +7,8 @@ class Profile extends Controller
 {
     public function index()
     {
-        $this->view('profile');
+        $this->view('profile', [
+            'title' => 'Profile'
+        ]);
     }
 }
