@@ -43,9 +43,33 @@ class Order extends Controller {
         $this->redirect('cart');
     }
 
-    public function update($id = null) 
+    public function edit($id = null) 
     {
+        if(!Auth::isLoggedIn()) {
+    
+            $this->redirect('login');
+        }
 
+        $orders = $this->load_model('Order');
+
+        if(count($_POST) > 0) {
+
+            $_POST['STATUS'] = 'paid';
+            $orders->update($id, $_POST);
+
+            $this->redirect('supplierDashboard');
+        }
+        else {
+            echo "this is not validated";
+        }
+
+        $row = $orders->where('id', $id);
+
+        if($row) {
+            $row = $row[0];
+        }
+        
+        $this->view('editOrder', []);
     }
 }
 

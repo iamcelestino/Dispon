@@ -14,7 +14,7 @@
                 <h1 class="">Order Details</h1>
                 <div class="">
                     <p class="">Order number: <span class="font-bold"><?= escape($order->id) ?></span></p>
-                    <p class="">status: <span class="font-bold"></span><?= escape($order->status)?></p>
+                    <p class="">status: <span class="font-bold"></span><?= escape($order->STATUS)?></p>
                     <p class="">Total: <span class="font-bold"></span><?= escape($order->total)?></p>
                     <p class="">created: <span class="font-bold"></span><?= escape(get_Date($order->created_at))?></p>
                 </div>

@@ -1,4 +1,6 @@
-<?php $this->view('includes/head') ?>
+<?php
+
+ $this->view('includes/head') ?>
 
 <nav class="bg-indigo-500 text-white p-4 block sm:hidden">
   <div class="flex items-center justify-between">
@@ -77,7 +79,7 @@
         </div>
         <div>
             <h4 class="text-lg font-semibold">Orders</h4>
-            <p><?= htmlspecialchars(count($orders)) ?></p>
+            <p><?= escape(count($orders)) ?></p>
         </div>
       </div>
       <div class="bg-white shadow-lg rounded-lg p-4 text-center flex items-center justify-center gap-4">
@@ -94,8 +96,8 @@
             <ion-icon class="text-4xl" name="cash"></ion-icon>
         </div>
         <div>
-            <h4 class="text-lg font-semibold">Total Inocomes</h4>
-            <p><?= $supplierIncome[0]-> ?> </p>
+            <h4 class="text-lg font-semibold">Total Incomes</h4>
+            <p><?= escape($supplierIncomes[0]->totalIncomes) ?></p>
         </div>
       </div>
     </div>
@@ -118,7 +120,7 @@
             <table class="min-w-full bg-white ">
               <thead>
                 <tr>
-                  <th class="px-4 py-2 border-b">Product name</th>
+                  <th class="px-4 py-2 border-b">Client Username</th>
                   <th class="px-4 py-2 border-b">Price</th>
                   <th class="px-4 py-2 border-b">Total</th>
                   <th class="px-4 py-2 border-b">Status</th>
@@ -127,14 +129,17 @@
               <tbody>
               <?php foreach($orders as $order): ?>
                 <tr class="text-center">
-                  <td class="px-4 py-2 border-b"><?= htmlspecialchars($order->id) ?></td>
-                  <td class="px-4 py-2 border-b"><?= htmlspecialchars($order->user_id) ?></td>
-                  <td class="px-4 py-2 border-b"><?=  htmlspecialchars($order->total) ?></td>
+                  <td class="px-4 py-2 border-b"><?= escape($order->id) ?></td>
+                  <td class="px-4 py-2 border-b"><?= escape($order->user_id) ?></td>
+                  <td class="px-4 py-2 border-b"><?=  escape($order->total) ?></td>
                   <td class="px-4 py-2 border-b">
-                  <?php if($order->status == 'pending'): ?>
-                    <span class="bg-red-400 p-[0.3rem] font-bold rounded-md text-white"><?=  htmlspecialchars($order->status) ?></span>
+                  <?php if($order->STATUS == 'pending'): ?>
+                    <span class="bg-red-400 p-[0.3rem] font-bold rounded-md text-white"><?=  escape($order->STATUS) ?></span>
+                    <a href="<?= BASE_URL ?>order/edit/<?= $order->id ?>">
+                      <ion-icon class="" name="create"></ion-icon>
+                    </a>
                   <?php else:  ?>
-                    <span class="bg-green-400 p-[0.3rem] font-bold rounded-md text-white"><?=  htmlspecialchars($order->status) ?></span>
+                    <span class="bg-green-400 p-[0.3rem] font-bold rounded-md text-white"><?=  escape($order->STATUS) ?></span>
                   <?php endif; ?>
                   </td>
                 </tr>

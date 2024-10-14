@@ -80,6 +80,7 @@ class Product extends Controller
         }
 
         $product = $this->load_model('Product');
+        
         if (count($_POST) > 0) {
             $user_id = Auth::getId();
 
@@ -90,6 +91,7 @@ class Product extends Controller
 
                 $product->update($id, $_POST);
                 $this->redirect('Product');
+
             }
             else {
                echo "this is not validated";
