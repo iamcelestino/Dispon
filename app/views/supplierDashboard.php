@@ -88,7 +88,7 @@
         </div>
         <div>
             <h4 class="text-lg font-semibold">Products</h4>
-            <p>100 Million</p>
+            <p><?= escape(count($supplier_products)) ?></p>
         </div>
       </div>
       <div class="bg-white shadow-lg rounded-lg p-4 text-center flex items-center justify-center gap-4">

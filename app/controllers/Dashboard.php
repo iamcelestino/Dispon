@@ -18,7 +18,11 @@ class Dashboard extends Controller {
         $orders = $order->where('user_id', Auth::getId());
         $totalIncomes = $order->query("SELECT SUM(total) as 'totalIncomes' FROM orders");
 
+        $product = new Product();
+        $SupplierProduct = $product->where('supplier_id', Auth::getId());
+
         $this->view('supplierDashboard', [
+            'supplier_products' => $SupplierProduct,
             'supplierIncomes' => $totalIncomes,
             'orders' => $orders
         ]);
