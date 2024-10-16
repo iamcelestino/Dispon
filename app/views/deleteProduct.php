@@ -44,9 +44,12 @@
                         </select>
                     </div>
                 </form>
-                <div>
+                <div class="flex justify-between items-center mt-4">
                     <a href="<?= BASE_URL ?>product">
-                        <button>Cancel</button>
+                        <button class="bg-indigo-500 text-white p-2 rounded-md font-medium">Cancel</button>
+                    </a>
+                    <a href="<?= BASE_URL ?>product/<?= $row->id ?>">
+                        <button class="bg-red-500 text-white p-2 rounded-md font-medium">DELETE</button>
                     </a>
                 </div>
             </div>

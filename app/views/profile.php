@@ -43,26 +43,29 @@ use App\Model\Auth;
 <main>
     <section>
         <div class="container py-16 ">
-            <div class="sm:flex items-center justify-center">
+            <div class="sm:flex items-center justify-center gap-10">
                 <div class="md:w-1/4">
                     <img class="" src="<?=ASSETS_URL?>images/undraw_pic_profile_re_7g2h.svg" alt="">
+                    <div class="mt-4">
+                        <input type="file">
+                    </div>
                 </div>
                 <div class="px-4">
-                    <div>
-                        <span class="font-bold">Username</span>
-                        <span><?= escape(Auth::getUsername()); ?></span>
+                    <div class="mb-4">
+                        <span class="font-bold">Username:</span>
+                        <span class="font-medium"><?= escape(Auth::getUsername()); ?></span>
                     </div>
-                    <div>
-                        <span class="font-bold">Email</span>
-                        <span><?= escape(Auth::getemail()); ?></span>
+                    <div class="mb-4">
+                        <span class="font-bold">Email:</span>
+                        <span class="font-medium"><?= escape(Auth::getemail()); ?></span>
                     </div>
-                    <div>
-                        <span class="font-bold">role</span>
-                        <span><?= escape(Auth::getRole()); ?></span>
+                    <div class="mb-4">
+                        <span class="font-bold">role:</span>
+                        <span class="font-medium"><?= escape(Auth::getRole()); ?></span>
                     </div>
-                    <div>
-                        <span class="font-bold">Joined Since</span>
-                        <span><?= escape(Auth::getcreated_at()); ?></span>
+                    <div class="mb-4">
+                        <span class="font-bold">Joined Since:</span>
+                        <span class="font-medium"><?= escape(Auth::getcreated_at()); ?></span>
                     </div>
                 </div>
             </div>

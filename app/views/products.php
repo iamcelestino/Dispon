@@ -4,11 +4,11 @@
 <main>
     <section>
         <div class="container py-16">
-            <div class="">
+            <div class="flex justify-between">
                 <form  method="POST">
                     <div class="sm:flex items-center justify-between">
                         <div class="">
-                            <input class="border-4 boder-indigo-500" type="text" name="name">
+                            <input class="border-2 border-indigo-500 p-2 rounded-lg" type="text" name="name">
                             <button type="submit" class="bg-indigo-500 text-white font-bold py-2 px-6 rounded-md" >Search</button>
                         </div>
                     </div>

@@ -10,10 +10,20 @@ class Dashboard extends Controller {
     public function index()
     {
         if(!Auth::isLoggedIn()) {
-    
             $this->redirect('login');
         }
 
+        $this->view('adminDashboard');
+
+    }
+
+    public function admin()
+    {
+        $this->view('adminDashboard');
+    }
+
+    public function suppliers($id = null)
+    {
         $order = new Order();
         $orders = $order->where('user_id', Auth::getId());
         $totalIncomes = $order->query("SELECT SUM(total) as 'totalIncomes' FROM orders");
@@ -26,16 +36,6 @@ class Dashboard extends Controller {
             'supplierIncomes' => $totalIncomes,
             'orders' => $orders
         ]);
-    }
-
-    public function admin()
-    {
-        $this->view('adminDashboard');
-    }
-
-    public function suppliers($id = null)
-    {
-        $this->view('supplierDashboard');
     }
 
 }

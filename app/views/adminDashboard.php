@@ -68,14 +68,14 @@
     <div class="p-6 mb-6">
       <h4 class="text-xl font-semibold mb-2">Welcome Celestino</h4>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mb-6">
       <div class="bg-white shadow-lg rounded-lg p-4 text-center flex items-center justify-center gap-4">
         <div class="bg-indigo-200 p-4 rounded-full">
             <ion-icon class="text-4xl" name="person"></ion-icon>
         </div>
         <div>
             <h4 class="text-lg font-semibold">Orders</h4>
-            <p><?= escape(count($orders)) ?></p>
+            <p></p>
         </div>
       </div>
       <div class="bg-white shadow-lg rounded-lg p-4 text-center flex items-center justify-center gap-4">
@@ -84,7 +84,7 @@
         </div>
         <div>
             <h4 class="text-lg font-semibold">Products</h4>
-            <p><?= escape(count($supplier_products)) ?></p>
+            <p></p>
         </div>
       </div>
       <div class="bg-white shadow-lg rounded-lg p-4 text-center flex items-center justify-center gap-4">
@@ -93,12 +93,38 @@
         </div>
         <div>
             <h4 class="text-lg font-semibold">Total Incomes</h4>
-            <p><?= escape($supplierIncomes[0]->totalIncomes) ?></p>
+            <p></p>
+        </div>
+      </div>
+      <div class="bg-white shadow-lg rounded-lg p-4 text-center flex items-center justify-center gap-4">
+        <div class="bg-indigo-200 p-4 rounded-full">
+            <ion-icon class="text-4xl" name="cash"></ion-icon>
+        </div>
+        <div>
+            <h4 class="text-lg font-semibold">Total Incomes</h4>
+            <p></p>
         </div>
       </div>
     </div>
 
-      <div class="bg-white shadow-lg rounded-lg">
+    <div class="sm:grid grid-cols-2 gap-6">
+        <div class="bg-white shadow-lg rounded-lg p-8">
+            <h1 class="font-bold">Top 3 Suplliers</h1>
+            <div class="flex items-center justify-between border-b mt-4 py-2">
+                <h4 class="font-bold">Supplier</h4>
+                <p class="font-medium">AOA 29283</p>
+            </div>
+        </div>
+
+        <div class="shadow-lg rounded-lg p-8">
+            <h1 class="font-bold">Top 3 Suplliers</h1>
+            <div class="">
+                <div class="loader"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-white shadow-lg rounded-lg">
         <div class="container mx-auto p-4">
           <div class="overflow-x-auto">
             <div class="sm:flex items-center justify-between mb-4">
@@ -120,28 +146,28 @@
                 </tr>
               </thead>
               <tbody>
-              <?php foreach($orders as $order): ?>
+              <?php  ?>
                 <tr class="text-center">
-                  <td class="px-4 py-2 border-b"><?= escape($order->id) ?></td>
-                  <td class="px-4 py-2 border-b"><?= escape($order->user_id) ?></td>
-                  <td class="px-4 py-2 border-b"><?=  escape($order->total) ?></td>
+                  <td class="px-4 py-2 border-b"></td>
+                  <td class="px-4 py-2 border-b"></td>
+                  <td class="px-4 py-2 border-b"></td>
                   <td class="px-4 py-2 border-b">
-                  <?php if($order->STATUS == 'pending'): ?>
-                    <span class="bg-red-400 p-[0.3rem] font-bold rounded-md text-white"><?=  escape($order->STATUS) ?></span>
-                    <a href="<?= BASE_URL ?>order/edit/<?= $order->id ?>">
+                  <?php ?>
+                    <span class="bg-red-400 p-[0.3rem] font-bold rounded-md text-white"></span>
+                    <a href="<?= BASE_URL ?>order/edit/">
                       <ion-icon class="" name="create"></ion-icon>
                     </a>
-                  <?php else:  ?>
-                    <span class="bg-green-400 p-[0.3rem] font-bold rounded-md text-white"><?=  escape($order->STATUS) ?></span>
-                  <?php endif; ?>
+                  <?php   ?>
+                    <span class="bg-green-400 p-[0.3rem] font-bold rounded-md text-white"></span>
+                  <?php  ?>
                   </td>
                 </tr>
-              <?php endforeach ?>
+              <?php  ?>
               </tbody>
             </table>
           </div>
         </div>
-      </div>
+    </div>
   </div>
 </div>
 
