@@ -23,7 +23,7 @@ function getSelect($key, $value)
     return "";
 }
 
-function escape($var) 
+function  escape($var) 
 {
     return htmlspecialchars($var);
 }

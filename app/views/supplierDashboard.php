@@ -38,11 +38,10 @@
 </nav>
 
 <div class="flex flex-col sm:flex-row">
-
   <div class="hidden sm:block w-full sm:w-1/4 bg-indigo-500 text-white h-screen p-4">
      <div class="flex items-center mb-6">
         <ion-icon class="text-3xl" name="pie-chart"></ion-icon>
-        <h1 class="text-3xl font-bold" ><a href="<?= BASE_URL ?>">d<span class="is">is</span><span class="po">po</span>n</a></h1>
+        <h1 class="text-3xl font-bold" ><a href="<?= BASE_URL ?>">dispon</a></h1>
     </div>
     <ul class="space-y-4">
         <li class="flex items-center hover:bg-gray-700 rounded">
@@ -98,6 +97,10 @@
       </div>
     </div>
 
+    <div id="myDoughnutChart">
+      
+    </div>
+
       <div class="bg-white shadow-lg rounded-lg">
         <div class="container mx-auto p-4">
           <div class="overflow-x-auto">
@@ -146,10 +149,13 @@
 </div>
 
 <script>
+
   function toggleMenu() {
     const menu = document.getElementById('mobile-menu');
     menu.classList.toggle('hidden');
   }
+
+
 </script>
 
 </body>

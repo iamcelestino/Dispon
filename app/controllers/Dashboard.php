@@ -13,8 +13,26 @@ class Dashboard extends Controller {
             $this->redirect('login');
         }
 
-        $this->view('adminDashboard');
+        $order = $this->load_model('Order');
+        $orders = $order->findAll();
 
+        $user = $this->load_model('User');
+        $suppliers = $user->where('role', 'supplier');
+        $clients = $user->where('role', 'client');
+
+        $topSupplier = $user->query("SELECT a.username, MAX(b.total) as 'incomes'
+                                    FROM users as a 
+                                    INNER JOIN orders as b on a.id = b.user_id
+                                    where a.role = 'supplier'");
+                                    
+
+        $this->view('adminDashboard', [
+            'totalSales' => $this->totalSales(),
+            'orders' => $orders,
+            'suppliers' => $suppliers,
+            'clients' => $clients,
+            'topSupplier' => $topSupplier
+        ]);
     }
 
     public function admin()
@@ -26,16 +44,22 @@ class Dashboard extends Controller {
     {
         $order = new Order();
         $orders = $order->where('user_id', Auth::getId());
-        $totalIncomes = $order->query("SELECT SUM(total) as 'totalIncomes' FROM orders");
 
         $product = new Product();
         $SupplierProduct = $product->where('supplier_id', Auth::getId());
 
         $this->view('supplierDashboard', [
             'supplier_products' => $SupplierProduct,
-            'supplierIncomes' => $totalIncomes,
+            'supplierIncomes' => $this->totalSales(),
             'orders' => $orders
         ]);
+    }
+
+    public function totalSales() 
+    {
+        $order = new Order();
+        $totalSales = $order->query("SELECT SUM(total) as 'totalIncomes' FROM orders");
+        return $totalSales;
     }
 
 }

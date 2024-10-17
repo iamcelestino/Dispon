@@ -22,17 +22,6 @@
                                             <p class="mt-1 text-sm font-medium text-gray-900">Supplier:<?= escape($product->username); ?></p>
                 
                                         </a>
-                                        <div>
-                                            <a href="<?= BASE_URL ?>product/delete/<?= $product->id ?>" class="">
-                                                <ion-icon class="" name="trash-bin"></ion-icon>
-                                            </a>
-                                            <a href="<?= BASE_URL ?>product/edit/<?= $product->id ?>">
-                                                <ion-icon class="text-indigo-500" name="create"></ion-icon>
-                                            </a>
-                                            <a class="inline-block bg-indigo-500 text-white p-2 rounded-md" href="<?= BASE_URL ?>product/details/<?= $product->id ?>">
-                                               Details
-                                            </a>
-                                        </div>
                                     </div>
                                 <?php endforeach; ?>
                             <?php else: ?>

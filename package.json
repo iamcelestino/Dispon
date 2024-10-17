@@ -18,5 +18,8 @@
   "homepage": "https://github.com/iamcelestino/Dispon#readme",
   "devDependencies": {
     "tailwindcss": "^3.4.7"
+  },
+  "dependencies": {
+    "chart.js": "^4.4.5"
   }
 }

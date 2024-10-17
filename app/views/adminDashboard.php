@@ -1,6 +1,6 @@
 <?php
 
- $this->view('includes/head') ?>
+$this->view('includes/head') ?>
 
 <nav class="bg-indigo-500 text-white p-4 block sm:hidden">
   <div class="flex items-center justify-between">
@@ -74,8 +74,8 @@
             <ion-icon class="text-4xl" name="person"></ion-icon>
         </div>
         <div>
-            <h4 class="text-lg font-semibold">Orders</h4>
-            <p></p>
+            <h4 class="text-lg font-semibold">Total Sales</h4>
+            <p><?= escape($totalSales[0]->totalIncomes) ?></p>
         </div>
       </div>
       <div class="bg-white shadow-lg rounded-lg p-4 text-center flex items-center justify-center gap-4">
@@ -83,8 +83,8 @@
             <ion-icon class="text-4xl"  name="apps"></ion-icon>
         </div>
         <div>
-            <h4 class="text-lg font-semibold">Products</h4>
-            <p></p>
+            <h4 class="text-lg font-semibold">Orders</h4>
+            <p><?= escape(count($orders)) ?></p>
         </div>
       </div>
       <div class="bg-white shadow-lg rounded-lg p-4 text-center flex items-center justify-center gap-4">
@@ -92,8 +92,8 @@
             <ion-icon class="text-4xl" name="cash"></ion-icon>
         </div>
         <div>
-            <h4 class="text-lg font-semibold">Total Incomes</h4>
-            <p></p>
+            <h4 class="text-lg font-semibold">Vendors</h4>
+            <p><?= escape(count($suppliers)) ?></p>
         </div>
       </div>
       <div class="bg-white shadow-lg rounded-lg p-4 text-center flex items-center justify-center gap-4">
@@ -101,23 +101,23 @@
             <ion-icon class="text-4xl" name="cash"></ion-icon>
         </div>
         <div>
-            <h4 class="text-lg font-semibold">Total Incomes</h4>
-            <p></p>
+            <h4 class="text-lg font-semibold">Customers</h4>
+            <p><?= escape(count($clients)) ?></p>
         </div>
       </div>
     </div>
 
     <div class="sm:grid grid-cols-2 gap-6">
         <div class="bg-white shadow-lg rounded-lg p-8">
-            <h1 class="font-bold">Top 3 Suplliers</h1>
+            <h1 class="font-bold">Top Suppliers</h1>
             <div class="flex items-center justify-between border-b mt-4 py-2">
-                <h4 class="font-bold">Supplier</h4>
-                <p class="font-medium">AOA 29283</p>
+                <h4 class="font-bold"><?= escape($topSupplier[0]->username) ?></h4>
+                <p class="font-medium">AOA <?= escape($topSupplier[0]->incomes) ?></</p>
             </div>
         </div>
 
         <div class="shadow-lg rounded-lg p-8">
-            <h1 class="font-bold">Top 3 Suplliers</h1>
+            <h1 class="font-bold mb-2">Top 3 Suplliers</h1>
             <div class="">
                 <div class="loader"></div>
             </div>
@@ -128,43 +128,32 @@
         <div class="container mx-auto p-4">
           <div class="overflow-x-auto">
             <div class="sm:flex items-center justify-between mb-4">
-              <h1 class="font-bold text-3xl">All Orders</h1>
-              <div class="sm:flex items-center">
-                <a class="text-white bg-indigo-500 inline-block font-medium px-4 py-2 ml-4 rounded-md" href="">
-                  Add Product
-                </a>
-              </div>
+              <h1 class="font-bold text-3xl">All Suppliers</h1>
             </div>
-
+            <?php if($suppliers): ?>
             <table class="min-w-full bg-white ">
               <thead>
                 <tr>
-                  <th class="px-4 py-2 border-b">Client Username</th>
-                  <th class="px-4 py-2 border-b">Price</th>
-                  <th class="px-4 py-2 border-b">Total</th>
-                  <th class="px-4 py-2 border-b">Status</th>
+                  <th class="px-4 py-2 border-b">Name</th>
+                  <th class="px-4 py-2 border-b">Email</th>
+                  <th class="px-4 py-2 border-b">Address</th>
+                  <th class="px-4 py-2 border-b">Start</th>
                 </tr>
               </thead>
               <tbody>
-              <?php  ?>
+                <?php foreach($suppliers as $supplier): ?>
                 <tr class="text-center">
-                  <td class="px-4 py-2 border-b"></td>
-                  <td class="px-4 py-2 border-b"></td>
-                  <td class="px-4 py-2 border-b"></td>
-                  <td class="px-4 py-2 border-b">
-                  <?php ?>
-                    <span class="bg-red-400 p-[0.3rem] font-bold rounded-md text-white"></span>
-                    <a href="<?= BASE_URL ?>order/edit/">
-                      <ion-icon class="" name="create"></ion-icon>
-                    </a>
-                  <?php   ?>
-                    <span class="bg-green-400 p-[0.3rem] font-bold rounded-md text-white"></span>
-                  <?php  ?>
-                  </td>
+                  <td class="px-4 py-2 border-b"><?= escape($supplier->username) ?></td>
+                  <td class="px-4 py-2 border-b"><?= escape($supplier->email) ?></td>
+                  <td class="px-4 py-2 border-b"><?= escape($supplier->address) ?></td>
+                  <td class="px-4 py-2 border-b"><?= escape(get_date($supplier->created_at)) ?></td>
                 </tr>
-              <?php  ?>
+                <?php endforeach ?>
               </tbody>
             </table>
+            <?php else: ?>
+                <h1>THERE'S NO SUPPLIERS YET</h1>
+            <?php endif ?>
           </div>
         </div>
     </div>
@@ -172,10 +161,12 @@
 </div>
 
 <script>
+
   function toggleMenu() {
     const menu = document.getElementById('mobile-menu');
     menu.classList.toggle('hidden');
   }
+
 </script>
 
 </body>
