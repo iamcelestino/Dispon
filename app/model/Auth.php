@@ -52,7 +52,9 @@ class Auth
     }
 
     public static function getRole() {
-        return $_SESSION['role'] ?? null;
+
+        return $_SESSION['USER']->role ?? null;
+
     }
 
     public static function user()
@@ -67,6 +69,7 @@ class Auth
     public static function __callStatic($method, $params)
     {   
         $prop = strtolower(str_replace("get","", $method));
+
         if(isset($_SESSION['USER']->$prop))
         {
             return $_SESSION['USER']->$prop;

@@ -3,7 +3,7 @@
 namespace App\Controllers;
 
 use Core\Controller;
-use App\Model\{Auth, Order, Product, User};
+use App\Model\{Auth, Order, Product};
 
 class Dashboard extends Controller {
 
@@ -13,6 +13,25 @@ class Dashboard extends Controller {
             $this->redirect('login');
         }
 
+        $role = Auth::getRole();
+
+        if($role === 'admin') {
+
+            return $this->admin();
+
+        }
+        elseif($role === 'supplier') {
+            
+            return $this->suppliers();
+
+        }
+        else {
+
+        }
+    }
+
+    public function admin()
+    {
         $order = $this->load_model('Order');
         $orders = $order->findAll();
 
@@ -21,7 +40,7 @@ class Dashboard extends Controller {
         $clients = $user->where('role', 'client');
 
         $topSupplier = $user->query("SELECT a.username, MAX(b.total) as 'incomes'
-                                    FROM users as a 
+                                    FROM users as a
                                     INNER JOIN orders as b on a.id = b.user_id
                                     where a.role = 'supplier'");
                                     
@@ -35,30 +54,39 @@ class Dashboard extends Controller {
         ]);
     }
 
-    public function admin()
-    {
-        $this->view('adminDashboard');
-    }
-
-    public function suppliers($id = null)
+    public function suppliers()
     {
         $order = new Order();
-        $orders = $order->where('user_id', Auth::getId());
+
+        $supplier_id = Auth::getId();
+
+        $orders = $order->where('user_id', $supplier_id);
 
         $product = new Product();
-        $SupplierProduct = $product->where('supplier_id', Auth::getId());
+        $SupplierProduct = $product->where('supplier_id', $supplier_id);
 
         $this->view('supplierDashboard', [
             'supplier_products' => $SupplierProduct,
-            'supplierIncomes' => $this->totalSales(),
+            'supplierIncomes' => $this->totalSales($supplier_id),
             'orders' => $orders
         ]);
     }
 
-    public function totalSales() 
+    public function totalSales($supplier_id = null) 
     {
         $order = new Order();
-        $totalSales = $order->query("SELECT SUM(total) as 'totalIncomes' FROM orders");
+
+        if ($supplier_id) {
+
+            $totalSales = $order->query("SELECT SUM(total) as 'totalIncomes' FROM orders WHERE user_id = ?", [$supplier_id] );
+
+        }
+        else {
+
+            $totalSales = $order->query("SELECT SUM(total) as 'totalIncomes' FROM orders");
+
+        }
+    
         return $totalSales;
     }
 
