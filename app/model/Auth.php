@@ -30,7 +30,7 @@ class Auth
     {
         if(!isset($_SESSION['USER']))
         {
-            return true;
+            return false;
         }
 
         $loggedInRole = $_SESSION['USER']->role;
@@ -49,6 +49,31 @@ class Auth
             return true;
         }
         return false;
+    }
+
+    public static function i_own_content($row) {
+
+        if(!isset($_SESSION['USER']))
+        {
+            return false;
+        }
+
+        if(isset($row->id) || isset($row->supplier_id)) {
+
+            if ($_SESSION['USER']->id == $row->user_id || $row->supplier_id) {
+                return true;
+            } 
+
+            $allowed[] = 'admin';
+            $allowed[] = 'supplier';
+
+            if(in_array($_SESSION['USER']->role, $allowed)) {
+                return true;
+            }
+
+            return false;
+        }   
+
     }
 
     public static function getRole() {

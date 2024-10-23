@@ -26,7 +26,7 @@ class Dashboard extends Controller {
 
         }
         else {
-
+            $this->redirect('unauthorized');
         }
     }
 
