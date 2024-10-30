@@ -3,8 +3,7 @@
 declare(strict_types=1);
 
 namespace App\Controllers;
-use App\Model\Auth;
-use App\Model\Product as ModelProduct;
+use App\Model\{Product as ModelProduct, Auth, Pager};
 use Core\Controller;
 
 class Product extends Controller 
@@ -17,26 +16,48 @@ class Product extends Controller
             $this->redirect('login');
         }
         
-        $products = $this->load_model('Product');
+        $product = new ModelProduct();
+
+        $limit = 1;
+        $pager = new Pager($limit);
+        $offset = $pager->offset;
+
+        echo "<prev>";
+            print_r($pager);
+        echo "<prev>";
 
         $data = false;
 
         if(!empty($_POST['name'])) {
 
-            $product = new ModelProduct();
             $name = "%" .trim($_POST['name']). "%";
 
-            $query = "SELECT * FROM products WHERE name LIKE  :prod_name";
-            $data = $product->query($query, ['prod_name' => $name]);
+            $query = "SELECT a.id, a.name, a.price, a.created_at, b.username 
+                    FROM products as a 
+                    INNER JOIN users as b on a.supplier_id = b.id
+                    WHERE a.name LIKE :prod_name
+                    LIMIT $limit OFFSET $offset ";
+
+            $data = $product->query($query, [
+                'prod_name' => $name,
+            ]);
         }
         else {
+
             $errors[] = "please Type a name to find";
-            $data = $products->findAll();
+
+            $query = "SELECT a.id, a.name, a.price, a.created_at, b.username
+          FROM products AS a 
+          INNER JOIN users AS b ON a.supplier_id = b.id 
+          LIMIT $limit OFFSET $offset "; 
+            $data = $product->query($query);
         }
+        
+ 
 
         $this->view('products', [
-            'title' => 'Products',
-            'rows' => $data
+            'rows' => $data,
+            'pager' => $pager
         ]);
     }
 

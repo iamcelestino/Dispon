@@ -31,7 +31,7 @@
                                         <h3 class="mt-4 text-sm text-gray-700"><?= escape($row->name); ?></h3>
                                         <p class="mt-1 text-lg font-medium text-gray-900">AOA <?= escape($row->price); ?></p>
                                         <p class="mt-1 text-sm font-medium text-gray-900">Date:<?= escape(get_Date($row->created_at)); ?></p>
-                                        <p class="mt-1 text-sm font-medium text-gray-900">Supplier:<?= escape($row->user->username); ?></p>
+                                        <!-- <p class="mt-1 text-sm font-medium text-gray-900">Supplier:<?= escape($row->supplier_name); ?></p> -->
                                     
                                     </a>
                                     <div>
@@ -51,6 +51,7 @@
                             <h3>No products were found at this time</h3>
                         <?php endif; ?>
                     </div>
+                    <?php $pager->display() ?>
                 </div>
             </div>
         </div>

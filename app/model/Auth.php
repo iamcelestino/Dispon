@@ -70,7 +70,7 @@ class Auth
             if(in_array($_SESSION['USER']->role, $allowed)) {
                 return true;
             }
-
+            
             return false;
         }   
 
