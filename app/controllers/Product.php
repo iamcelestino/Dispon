@@ -18,13 +18,9 @@ class Product extends Controller
         
         $product = new ModelProduct();
 
-        $limit = 1;
+        $limit = 8;
         $pager = new Pager($limit);
         $offset = $pager->offset;
-
-        echo "<prev>";
-            print_r($pager);
-        echo "<prev>";
 
         $data = false;
 
@@ -47,14 +43,12 @@ class Product extends Controller
             $errors[] = "please Type a name to find";
 
             $query = "SELECT a.id, a.name, a.price, a.created_at, b.username
-          FROM products AS a 
-          INNER JOIN users AS b ON a.supplier_id = b.id 
-          LIMIT $limit OFFSET $offset "; 
-            $data = $product->query($query);
+            FROM products AS a 
+            INNER JOIN users AS b ON a.supplier_id = b.id 
+            LIMIT $limit OFFSET $offset "; 
+                $data = $product->query($query);
         }
         
- 
-
         $this->view('products', [
             'rows' => $data,
             'pager' => $pager

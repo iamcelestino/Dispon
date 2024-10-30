@@ -51,8 +51,8 @@
                             <h3>No products were found at this time</h3>
                         <?php endif; ?>
                     </div>
-                    <?php $pager->display() ?>
                 </div>
+                <?php $pager->display() ?>
             </div>
         </div>
     </section>

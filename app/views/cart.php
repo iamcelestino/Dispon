@@ -29,6 +29,7 @@
                             <?php endif; ?>
                         </div>
                     </div>
+                    <?php $pager->display() ?>
                 </div>
 
                 <div class=" col-span-2">

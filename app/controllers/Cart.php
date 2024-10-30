@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 use Core\Controller;
-use App\Model\{Auth, Cart as CartModel, CartItem};
+use App\Model\{Auth, Cart as CartModel, CartItem, Pager};
 
 class Cart extends Controller {
     
@@ -13,11 +13,16 @@ class Cart extends Controller {
             $this->redirect('login');
         }
 
+        $limit = 6;
+        $pager = new Pager($limit);
+        $offset = $pager->offset;
+
         $cartProducts = new CartItem();
-        $products = $cartProducts->query('SELECT a.id, a.name, a.description, a.price, b.username, c.quantity
+        $products = $cartProducts->query("SELECT a.id, a.name, a.description, a.price, b.username, c.quantity
                                             FROM products as a 
                                             INNER JOIN users as b on a.supplier_id = b.id
-                                            INNER JOIN cartitems as c ON a.id = c.product_id'
+                                            INNER JOIN cartitems as c ON a.id = c.product_id
+                                            LIMIT $limit OFFSET $offset"
                                         );
                                                                    
         $totalPrice = $this->totalPrice($products); 
@@ -25,7 +30,8 @@ class Cart extends Controller {
         $this->view('cart', [
             'title' => 'Cart',
             'cartProducts' => $products,
-            'totalPrice' => $totalPrice
+            'totalPrice' => $totalPrice,
+            'pager' => $pager
         ]);
     }
 
