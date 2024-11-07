@@ -37,7 +37,7 @@ class Model extends Database
         return $data;
     }
 
-    public function fisrt($column, $value)
+    public function first($column, $value)
     {
         $column = addslashes($column);
         $query = "SELECT * FROM " . $this->table . " WHERE " . $column . " = :value";
@@ -110,7 +110,25 @@ class Model extends Database
     }
 
     public function update($id, $data) 
-    {
+    {   
+        if(property_exists($this, 'allowedColumns'))
+        {
+            foreach($data as $key => $columns) 
+            {
+                if(!in_array($key, $this->allowedColumns))
+                {
+                    unset($data[$key]);
+                }
+            }
+        } 
+
+        if(property_exists($this, 'beforeInsert'))
+        {
+            foreach($this->beforeInsert as $func) {
+                $data = $this->$func($data);
+            }
+        } 
+        
         $string = '';
         foreach ($data as $key => $value) { 
             $string .= "$key = :$key, "; 

@@ -22,13 +22,11 @@ use App\Model\Auth;
                         </div>
                     </div>
                     <div class="hidden group-hover:block absolute bg-gray-100 min-w-[100px] shadow-lg z-10">
-                        <a class="float-none text-black px-4 py-3 no-underline block text-left" href="<?= BASE_URL ?>profile">Profile</a>
-                        <a class="float-none text-black px-4 py-3 no-underline block text-left"  href="<?=  BASE_URL ?>">Dashboard</a>
+                    <a class="float-none text-black px-4 py-3 no-underline block text-left"  href="<?= BASE_URL ?>profile">Profile</a>
+                        <a class="float-none text-black px-4 py-3 no-underline block text-left"  href="<?=  BASE_URL ?>dashboard">Dashboard</a>
+                        <a class="float-none text-black px-4 py-3 no-underline block text-left"  href="<?=  BASE_URL ?>order">My Orders</a>
                         <a class="float-none text-black px-4 py-3 no-underline block text-left"  href="<?= BASE_URL ?>logout">Logout</a>
                     </div>
-                </li>
-                <li class="list-none ml-4">
-                    <a href=""><ion-icon name="settings"></ion-icon></a>
                 </li>
             </div>
             <div class=" flex-col md:hidden ">
@@ -47,7 +45,8 @@ use App\Model\Auth;
                 <div class="md:w-1/4">
                     <img class="" src="<?=ASSETS_URL?>images/undraw_pic_profile_re_7g2h.svg" alt="">
                     <div class="mt-4">
-                        <input type="file">
+                        <a href="<?= BASE_URL ?>profile/edit/<?= $rows->id ?>" class="bg-green-500  p-2 text-white font-medium">Edit Profile</a>
+                        <a href="<?= BASE_URL ?>profile/delete" class="bg-red-500  p-2 text-white font-medium">Delete Profile</a>
                     </div>
                 </div>
                 <div class="px-4">
@@ -63,6 +62,12 @@ use App\Model\Auth;
                         <span class="font-bold">role:</span>
                         <span class="font-medium"><?= escape(Auth::getRole()); ?></span>
                     </div>
+
+                    <div class="mb-4">
+                        <span class="font-bold">Gender:</span>
+                        <span class="font-medium"><?= escape(Auth::getGender()); ?></span>
+                    </div>
+
                     <div class="mb-4">
                         <span class="font-bold">Joined Since:</span>
                         <span class="font-medium"><?= escape(Auth::getcreated_at()); ?></span>

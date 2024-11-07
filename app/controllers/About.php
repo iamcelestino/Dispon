@@ -13,4 +13,5 @@ class About extends Controller
             'title' => 'About'
         ]);
     }
+
 }

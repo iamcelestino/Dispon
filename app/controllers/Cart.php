@@ -13,7 +13,7 @@ class Cart extends Controller {
             $this->redirect('login');
         }
 
-        $limit = 6;
+        $limit = 8;
         $pager = new Pager($limit);
         $offset = $pager->offset;
 
@@ -57,6 +57,7 @@ class Cart extends Controller {
             $cartItem->insert($data);
     
            $this->redirect('cart');
+
         }else {
             echo "COULD NOT CREATE OR RETRIEVE A CART";
         }
@@ -87,6 +88,7 @@ class Cart extends Controller {
     public function getCartId($userId)
     {
         $cart = new CartModel();
+        
         $cartIds = $cart->query('SELECT id FROM carts WHERE user_id = :user_id', ['user_id' => $userId]);
 
         if ($cartIds && count($cartIds) > 0) {

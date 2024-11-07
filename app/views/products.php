@@ -32,7 +32,6 @@
                                         <p class="mt-1 text-lg font-medium text-gray-900">AOA <?= escape($row->price); ?></p>
                                         <p class="mt-1 text-sm font-medium text-gray-900">Date:<?= escape(get_Date($row->created_at)); ?></p>
                                         <!-- <p class="mt-1 text-sm font-medium text-gray-900">Supplier:<?= escape($row->supplier_name); ?></p> -->
-                                    
                                     </a>
                                     <div>
                                         <a href="<?= BASE_URL ?>product/delete/<?= $row->id ?>" class="">
