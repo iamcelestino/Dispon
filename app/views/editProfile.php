@@ -40,16 +40,21 @@ use App\Model\Auth;
 
 <main>
     <section>
+        <?php if($rows): ?>
+            <?php $image = getImage($rows->image, $rows->gender); ?>
         <div class="container py-16 ">
+        <form method="POST" enctype="multipart/form-data">
             <div class="sm:flex items-center justify-center gap-10">
                 <div class="md:w-1/4">
-                    <img class="" src="<?=ASSETS_URL?>images/undraw_pic_profile_re_7g2h.svg" alt="">
+                    <img class="" src="<?=$image?>" alt="">
                     <div class="mt-4 text-center">
-                        <a href="<?= BASE_URL ?>profile/edit/<?= $rows->id ?>" class="bg-green-500  p-2 text-white font-medium rounded-lg">Add profile picture</a>
+                        <label for="image_browser" class="bg-indigo-500 p-2 text-white font-medium">
+                            <input id="image_browser" type="file" name="image" class="file_info"">
+                        </label>
                     </div>
                 </div>
                 <div class="px-4">
-                <form method="POST" class="">
+               
                     <h2 class="font-medium text-center">EDIT USER PROFILE</h2>
                     <div class="flex flex-col items-center ">
                         <input
@@ -108,11 +113,16 @@ use App\Model\Auth;
                             <button class="bg-indigo-500  text-white p-2 rounded-lg">save changes</button>
                         </div>
                     </div>
-                </form>
+                
                 </div>
             </div>
+        </form>
         </div>
+        <?php else: ?>
+            <h1>PROFILE NOT FOUND</h1>
+        <?php endif ?>
     </section>
 </main>
-
+<script>
+</script>
 <?php $this->view('includes/footer') ?>

@@ -40,10 +40,12 @@ use App\Model\Auth;
 
 <main>
     <section>
+        <?php if($rows): ?>
+            <?php $image = getImage($rows->image, $rows->gender); ?>
         <div class="container py-16 ">
             <div class="sm:flex items-center justify-center gap-10">
                 <div class="md:w-1/4">
-                    <img class="" src="<?=ASSETS_URL?>images/undraw_pic_profile_re_7g2h.svg" alt="">
+                    <img class="" src="<?= $image ?>" alt="">
                     <div class="mt-4">
                         <a href="<?= BASE_URL ?>profile/edit/<?= $rows->id ?>" class="bg-green-500  p-2 text-white font-medium">Edit Profile</a>
                         <a href="<?= BASE_URL ?>profile/delete" class="bg-red-500  p-2 text-white font-medium">Delete Profile</a>
@@ -75,6 +77,9 @@ use App\Model\Auth;
                 </div>
             </div>
         </div>
+        <?php else: ?>
+            <h1>PROFILE NOT FOUND</h1>
+        <?php endif ?>
     </section>
 </main>
 
