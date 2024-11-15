@@ -12,6 +12,7 @@ class Product  extends Model
         'description',
         'price',
         'status',
+        'image',
         'created_at'
     ];
 
@@ -36,20 +37,15 @@ class Product  extends Model
         $this->errors['description'] = "please enter a valid description";
        }
 
-       if (empty($DATA['status'])) 
-       {
-        $this->errors['status'] = "please enter a valid";
-       }
-
         if (empty($DATA['price']) || !is_numeric($DATA['price'])) 
         {
             $this->errors['price'] = "Insert the right price of product";
         }
 
-       $category_id = ['H&B', 'ELE', 'CLT'];
+        $category_id = ['H&B', 'ELE', 'CLT'];
         if (empty($DATA['category_id']) || !in_array($DATA['category_id'], $category_id)) 
         {
-            $this->errors[''] = "Please Select a category";
+            $this->errors['category_id'] = "Please Select a category";
         }
 
        if(count($this->errors) == 0) {

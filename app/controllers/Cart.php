@@ -18,7 +18,7 @@ class Cart extends Controller {
         $offset = $pager->offset;
 
         $cartProducts = new CartItem();
-        $products = $cartProducts->query("SELECT a.id, a.name, a.description, a.price, b.username, c.quantity
+        $products = $cartProducts->query("SELECT a.id, a.name, a.description, a.price, a.image, b.username, c.quantity
                                             FROM products as a 
                                             INNER JOIN users as b on a.supplier_id = b.id
                                             INNER JOIN cartitems as c ON a.id = c.product_id

@@ -3,6 +3,8 @@
 use App\Model\Auth;
 ?>
 <header class="py-6">
+<?php if($rows): ?>
+    <?php $image = getImage($rows->image, $rows->gender); ?>
     <div class="container">
         <div class="flex justify-between items-center">
             <div class="navigation_itens flex items-center">
@@ -17,9 +19,7 @@ use App\Model\Auth;
                 <li class="group relative  ml-4 list-none">
                     <div class="flex items-center justify-center">
                         <a href="<?=  BASE_URL ?>contact"><?= escape(Auth::getUsername()); ?></a>
-                        <div class="flex -space-x-1 overflow-hidden">
-                            <img class="inline-block h-6 w-6 rounded-full ring-2 ring-white" src="https://images.unsplash.com/photo-1491528323818-fdd1faba62cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
-                        </div>
+                        <img class="rounded-full w-10" src="<?=$image?>" alt="">
                     </div>
                     <div class="hidden group-hover:block absolute bg-gray-100 min-w-[100px] shadow-lg z-10">
                     <a class="float-none text-black px-4 py-3 no-underline block text-left"  href="<?= BASE_URL ?>profile">Profile</a>
@@ -40,16 +40,14 @@ use App\Model\Auth;
 
 <main>
     <section>
-        <?php if($rows): ?>
-            <?php $image = getImage($rows->image, $rows->gender); ?>
         <div class="container py-16 ">
         <form method="POST" enctype="multipart/form-data">
             <div class="sm:flex items-center justify-center gap-10">
                 <div class="md:w-1/4">
-                    <img class="" src="<?=$image?>" alt="">
+                    <img class="rounded-full" src="<?=$image?>" alt="">
                     <div class="mt-4 text-center">
                         <label for="image_browser" class="bg-indigo-500 p-2 text-white font-medium">
-                            <input id="image_browser" type="file" name="image" class="file_info"">
+                            <input id="image_browser" type="file" name="image" class="file_info">
                         </label>
                     </div>
                 </div>
@@ -71,7 +69,6 @@ use App\Model\Auth;
                             value="<?= getVar('email', $rows->email); ?>"
                             placeholder="Enter email"
                         >
-
                         <select name="address" id="address" class="border-2 border-indigo-500 rounded-lg w-full mb-3">
                             <option <?= getSelect('address', $rows->address); ?> value="<?=$rows->address?>"><?=$rows->address?></option>
                             <option <?= getSelect('address', 'Lobito'); ?> value="Lobito">Lobito</option>

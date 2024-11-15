@@ -7,7 +7,7 @@
             <div class="sm:grid grid-cols-2 gap-10">
             <?php foreach($rows as $row ): ?>
                 <div class="w-2/8 md:w-2/8 shadow-lg hover:shadow-xl rounded-md ">
-                    <div class="p-2"><img class="" src="<?=ASSETS_URL?>images/undraw_pic_profile_re_7g2h.svg" alt="Avatar" style="width:100%"></div>
+                    <div class="p-2"><img class="" src="<?=$row->image?>" alt="Avatar" style="width:100%"></div>
                     <div class="container py-6 px-12 bg-indigo-500 mt-4">
                         <h4 class="text-2xl"><b><?= escape($row->username )?></b></h4>
                         <p class="my-2"><?= escape($row->email) ?></p>

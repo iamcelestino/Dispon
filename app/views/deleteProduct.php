@@ -43,15 +43,15 @@
                             <option  <?= getSelect('category_id', 'CLT'); ?> value="CLT">Clothing</option>
                         </select>
                     </div>
-                </form>
-                <div class="flex justify-between items-center mt-4">
+                    <div class="flex justify-between items-center mt-4">
                     <a href="<?= BASE_URL ?>product">
                         <button class="bg-indigo-500 text-white p-2 rounded-md font-medium">Cancel</button>
                     </a>
-                    <a href="<?= BASE_URL ?>product/<?= $row->id ?>">
-                        <button class="bg-red-500 text-white p-2 rounded-md font-medium">DELETE</button>
+                    <a href="<?= BASE_URL ?>product/delete/<?= $row->id ?>">
+                        <button type="submit" class="bg-red-500 text-white p-2 rounded-md font-medium">DELETE</button>
                     </a>
                 </div>
+                </form>
             </div>
         </div>
     </section>

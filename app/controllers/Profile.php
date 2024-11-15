@@ -24,10 +24,6 @@ class Profile extends Controller
         $user = new User();
         $id = Auth::getId();
 
-        echo "<pre>";
-            print_r($_FILES);
-        echo "</pre>";
-
         if(count($_POST)) {
 
             unset($_POST['password2']);

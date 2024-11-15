@@ -79,9 +79,10 @@
                         <?php if($products): ?>
                             <?php for($i = 0; $i < count($products) && $i < 4; $i++): ?>
                                 <?php $product = $products[$i] ?>
+                                    <?php $image = getProductImage($product->image); ?>
                                 <a href="#" class="group">
                                     <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
-                                    <img src="https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-02.jpg" alt="Olive drab green insulated bottle with flared screw lid and flat top." class="h-full w-full object-cover object-center group-hover:opacity-75">
+                                    <img src="<?=$image?>" alt="Olive drab green insulated bottle with flared screw lid and flat top." class="h-full w-full object-cover object-center group-hover:opacity-75">
                                     </div>
                                     <h3 class="mt-4 text-sm text-gray-700"><?= escape($product->name); ?></h3>
                                     <p class="mt-1 text-lg font-medium text-gray-900">AOA <?= escape($product->price); ?></p>

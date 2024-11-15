@@ -5,7 +5,7 @@
     <section class="">
         <div class="container">
                 <div class="">
-                    <form method="POST">
+                    <form method="POST" enctype="multipart/form-data">
                         <div class="flex flex-col">
                             <input
                                 class="border-2 border-indigo-500 rounded-lg mb-2"
@@ -37,7 +37,7 @@
                                 value="<?= getVar('price'); ?>"
                                 placeholder="Price"
                             ">
-
+                            <input type="file" name="image" id="image">
                             <select name="category_id" class="mb-2">
                                 <option  <?= getSelect('category_id', ''); ?>    value="">category</option>
                                 <option  <?= getSelect('category_id', 'H&B'); ?> value="H&B">Health & beauty</option>
@@ -46,6 +46,7 @@
                             </select>
                             <button class="bg-indigo-500 text-white p-2 rounded-lg">add Product</button>
                         </div>
+                        
                     </form>
                 </div>
         </div>

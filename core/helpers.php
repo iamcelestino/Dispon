@@ -1,5 +1,7 @@
 <?php
 
+use App\Model\Image;
+
 function getVar($key, $default = '') 
 {
 
@@ -25,6 +27,7 @@ function getSelect($key, $value)
 
 function getImage($image, $gender = 'male') 
 {
+   
     if(!file_exists($image)) {
 
         $image = ASSETS_URL.'images/undraw_pic_profile_re_7g2h.svg';
@@ -35,7 +38,23 @@ function getImage($image, $gender = 'male')
         }
     }
     else {
-        $image = BASE_URL . $image;
+        $imageModel = new Image();
+        $image = BASE_URL . $imageModel->profileThumb($image);
+    }
+
+    return $image;
+}
+
+function getProductImage($image) 
+{
+   
+    if(!file_exists($image)) {
+
+        $image = ASSETS_URL.'images/undraw_posting_photo_re_plk8.svg';
+    }
+    else {
+        $imageModel = new Image();
+        $image = BASE_URL . $imageModel->profileThumb($image);
     }
 
     return $image;
